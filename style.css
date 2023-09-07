@@ -165,6 +165,11 @@ body {
 
     body {
         margin-top: 0; /* Adjust as needed */
+        padding: 0;
+    }
+    .menu__wrapper {
+        top: 200px; /* Adjust the value as needed */
+        /* ... other styles ... */
     }
 
     
