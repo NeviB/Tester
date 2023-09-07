@@ -50,7 +50,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    padding-right: -100%; /* Example padding for mobile screens */
+    padding-right: -0; /* Example padding for mobile screens */
     gap: 32px;
     background-color: var(--background);
     height: 60px;
