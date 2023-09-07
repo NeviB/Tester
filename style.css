@@ -2,8 +2,7 @@
     --primary: #DAD2C2; ;
     --primary-hover: #BFB098;                
     --background: #485253;
-    --navbar-height: 80px 60px;
-
+    --navbar-height: 60px;
 }
 
 :root {
@@ -51,7 +50,6 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    padding-right: -0; /* Example padding for mobile screens */
     gap: 32px;
     background-color: var(--background);
     height: 60px;
@@ -221,23 +219,6 @@ body {
 }
 
 
-
-@media (max-width: 600px) {
-    /* For screens up to 600px width (mobile) */
-    .menu__bar {
-        padding-right: 0; /* Remove right padding for mobile */
-        justify-content: center; /* Center the menu horizontally */
-    }
-}
-
-/* Media query for screens with a width of 1080px or larger */
-@media (min-width: 1080px) {
-    .menu__bar {
-      
-        padding-right: ; /* Restore right padding for 1080px resolution */
-        
-    }
-}
 
 
 
