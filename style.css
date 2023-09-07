@@ -172,9 +172,10 @@ body {
     .menu-icon {
         display: block;
     }
-    .menu__wrapper{
-        top: var(--navbar-height);
-    }
+ body{
+    margin: 0;
+    padding: 0;
+ }
 
     .navigation--mobile {
         top: var(--navbar-height);
