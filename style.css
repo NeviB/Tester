@@ -2,7 +2,7 @@
     --primary: #DAD2C2; ;
     --primary-hover: #BFB098;                
     --background: #485253;
-
+    --navbar-height: 80px;
 }
 
 :root {
@@ -185,7 +185,7 @@ body {
         position: absolute;
         right: 0px;
         display: flex;
-        /*padding: 80px 60px;*/
+        padding: 80px 60px;
         min-height: 100%;
         background-color: var(--background);       
         gap: 8px;
@@ -216,7 +216,7 @@ body {
         0% {
             opacity: 1;
             width: 100%;
-            height: calc(100vh - var(--navbar-height));
+            height: calc(400vh - var(--navbar-height));
         }
         100% {
             opacity: 0;
