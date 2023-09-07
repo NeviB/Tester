@@ -172,16 +172,14 @@ body {
     .menu-icon {
         display: block;
     }
-    .menu__wrapper{
-        padding: 100px;
-    }
+
 
     .navigation--mobile {
         top: var(--navbar-height);
         position: absolute;
         right: 0px;
         display: flex;
-       
+      
         min-height: 100%;
         background-color: var(--background);       
         gap: 8px;
