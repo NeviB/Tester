@@ -1,0 +1,380 @@
+:root {
+    --primary: #DAD2C2; ;
+    --primary-hover: #BFB098;                
+    --background: #485253;
+    --navbar-height: 60px;
+}
+
+:root {
+    --backgroundgal: #3C343D;
+    --backgroundgal-border: #6B626C;
+}
+
+body {
+    overflow-x: hidden; /* Lock horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+.background {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+   background-image: url(background.jpg); 
+    opacity: 1;
+    z-index: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menu__wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    z-index: 2;   
+}
+
+.menu__bar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 32px;
+    background-color: var(--background);
+    height: 60px;
+    opacity: 0.9;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    height: 32px;
+    width: 32px;
+}
+
+.navigation {    
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    gap: 24px;
+    padding: 0px;
+    background-color: var(--background);
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
+
+.logo-wrapper img {
+  width: 100%;
+  height: auto;
+  margin-left: 7px;
+  
+}
+
+.social-wrapper {
+  display: flex; /* Make it a flex container */
+  flex-direction: row; /* Arrange children horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 5px; /* Adjust the gap between images */
+    
+}
+
+.social-wrapper img {
+  max-width: 30px; /* Limit the maximum width of the images */
+  height: auto;
+}
+
+                    
+.navigation > li {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.navigation > li > a {
+    color: white;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+    background-image: linear-gradient(
+        to right,
+        var(--primary-hover),
+        var(--primary-hover) 50%,
+        white 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 3px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation > li > a:before {
+    content: '';
+    background: var(--primary-hover);
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.2s ease-in-out;
+}
+  
+.navigation > li > a:hover {
+    background-position: 0;
+}
+/*  hover effect inspired by 
+    https://codepen.io/team/css-tricks/pen/OJOXWPp
+*/
+
+.navigation > li > a:hover::before{
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .navigation {
+        display: none;
+    }
+    .social-wrapper{
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navigation--mobile {
+        top: var(--navbar-height);
+        position: absolute;
+        right: 0px;
+        display: flex;
+        padding: 80px 60px;
+        min-height: 100%;
+        background-color: var(--background);       
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        opacity: 0.95;
+        animation: fadein 0.3s forwards;
+    }
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+    }
+
+    .navigation--mobile--fadeout {
+        animation: fadeout 300ms forwards;
+    }
+
+    @keyframes fadeout {
+        0% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+        100% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .gallery {
+        justify-content: flex-start; /* Start align items from the left */
+    }
+}
+
+/* Media query for screens with a width of 1080px or larger */
+@media (min-width: 1080px) {
+    .card {
+        height: 300px; /* Adjust the height for 1080px resolution */
+    }
+}
+
+/* Media query for screens with a width of 1440px or larger */
+@media (min-width: 1440px) {
+    .card {
+        height: 700px; /* Adjust the height for 1440px resolution */
+    }
+}
+
+
+
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap as needed */
+   justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Center the cards vertically */
+    max-width: 100%; /* Prevent horizontal overflow */
+    margin: 0 auto; /* Center the gallery horizontally */
+    padding: 20px; /* Add padding as needed */
+}
+
+.card {
+    /* Adjust the width and height properties to control the card size */
+    width: calc(25% - 20px); /* Adjust the width and gap as needed */
+    min-width: 200px; /* Minimum card width */
+    
+    border-radius: 16px;
+    transition: 1000ms all;
+    transform-origin: center left;
+    display: flex; /* Add flex display to center the image */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    /* Add any other card styles you need */
+}
+
+.card img {
+    /* Reduce the size of the image */
+    max-width: 80%; /* Set an upper limit for the image width */
+    height: auto; /* Allow the height to adjust proportionally */
+    max-height: 100%; /* Limit the image height to match the card's height */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+/* .card:hover figcaption {
+    font-size: 0.6rem;
+    position: absolute;
+    height: 80px;
+    width: 160px;
+    display: flex;
+    align-items: end;
+  /*  background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    color: white;
+    left: 0px;
+    bottom: 0px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+}*/
+
+.card:hover ~ .card {
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateX(22px);
+}
+
+
+
+/*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
+.edge--bottom {
+  position: relative;
+  z-index: 1;
+}
+.edge--bottom:after {
+  background: inherit;
+  content: "";
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--bottom:after {
+  bottom: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
+}
+.edge--bottom--reverse {
+  position: relative;
+  z-index: 1;
+}
+.edge--bottom--reverse:after {
+  background: inherit;
+  content: "";
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--bottom--reverse:after {
+  bottom: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 0 100%;
+}
+
+.edge--bottom img {
+  display: block;
+  width: 100%;
+  height: auto;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  margin-top: 60px;
+  }
+
+.block {
+  color: #fff;
+  font-family: "Fira Sans", sans-serif;
+  margin: 0 0 100px; /* creates space between sections of the website */
+  padding: 20% 20px;
+  text-align: center;
+}
+/*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
+
+
