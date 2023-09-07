@@ -2,7 +2,7 @@
     --primary: #DAD2C2; ;
     --primary-hover: #BFB098;                
     --background: #485253;
-    --navbar-height: 200px 200px;
+    --navbar-height: 80px 60px;
 }
 
 :root {
@@ -15,7 +15,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden; /* Lock horizontal scrolling */
     font-family: Poppins;
+
 }
 
 * {
@@ -49,7 +51,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    
     gap: 32px;
     background-color: var(--background);
     height: 60px;
@@ -176,7 +178,7 @@ body {
         position: absolute;
         right: 0px;
         display: flex;
-        padding: 80px 80px;
+        padding: 80px 60px;
         min-height: 100%;
         background-color: var(--background);       
         gap: 8px;
