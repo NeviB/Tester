@@ -2,7 +2,7 @@
     --primary: #DAD2C2; ;
     --primary-hover: #BFB098;                
     --background: #485253;
-    --navbar-height: 80px 60px;
+    --navbar-height: 80px;
 }
 
 :root {
@@ -31,7 +31,7 @@ body {
     display: block;
     width: 100vw;
     height: 100vh;
-   background-image: url(background.jpg); 
+/*    background-image: url(background.jpg); */
     opacity: 1;
     z-index: 1;
     background-size: cover;
@@ -42,7 +42,7 @@ body {
     display: flex;
     position: relative;
     flex-direction: row;
-    z-index: 2;   
+    z-index: 2;  
 }
 
 .menu__bar {
@@ -51,7 +51,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    flex-direction: row;
     gap: 32px;
     background-color: var(--background);
     height: 60px;
@@ -171,6 +171,9 @@ body {
 
     .menu-icon {
         display: block;
+    }
+    .menu__wrapper{
+        top: var(--navbar-height);
     }
 
     .navigation--mobile {
