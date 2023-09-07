@@ -172,6 +172,7 @@ body {
     }
 
     .navigation--mobile {
+        position: fixed;
         top: var(--navbar-height);
         position: absolute;
         right: 0px;
