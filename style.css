@@ -161,6 +161,11 @@ body {
 }
 
 @media (max-width: 600px) {
+
+    body {
+        margin-top: 0; /* Adjust as needed */
+    }
+
     
     .navigation {
         display: none;
@@ -179,7 +184,7 @@ body {
         position: absolute;
         right: 0px;
         display: flex;
-        
+        padding: 80px 60px;
         min-height: 100%;
         background-color: var(--background);       
         gap: 8px;
