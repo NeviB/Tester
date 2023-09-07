@@ -216,7 +216,7 @@ body {
         0% {
             opacity: 1;
             width: 100%;
-            height: calc(400vh - var(--navbar-height));
+            height: calc(100vh - var(--navbar-height));
         }
         100% {
             opacity: 0;
