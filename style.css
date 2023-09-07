@@ -168,7 +168,7 @@ body {
         padding: 0;
     }
     .menu__wrapper {
-        top: 100px; /* Adjust the value as needed */
+        top: -100px; /* Adjust the value as needed */
         /* ... other styles ... */
     }
 
