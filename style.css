@@ -2,7 +2,7 @@
     --primary: #DAD2C2; ;
     --primary-hover: #BFB098;                
     --background: #485253;
-    --navbar-height: 120px;
+    --navbar-height: 80px 60px;
 }
 
 :root {
