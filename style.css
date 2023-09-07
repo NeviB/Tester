@@ -2,7 +2,7 @@
     --primary: #DAD2C2; ;
     --primary-hover: #BFB098;                
     --background: #485253;
-    --navbar-height: 120px;
+    --navbar-height: 80px 60px;
 }
 
 :root {
@@ -12,12 +12,6 @@
 
 body {
     overflow-x: hidden; /* Lock horizontal scrolling */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Lock horizontal scrolling */
-    font-family: Poppins;
-
 }
 
 * {
@@ -166,10 +160,6 @@ body {
     body {
         margin-top: 0; /* Adjust as needed */
         padding: 0;
-    }
-    .menu__wrapper {
-        top: -150px; /* Adjust the value as needed */
-        /* ... other styles ... */
     }
 
     
