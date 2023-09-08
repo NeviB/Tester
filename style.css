@@ -168,6 +168,8 @@ body {
     }
 
 
+
+
     
     .navigation {
         display: none;
@@ -236,24 +238,33 @@ body {
 
 
 
-
+/*
 @media (max-width: 600px) {
     .gallery {
-        justify-content: flex-start; /* Start align items from the left */
+        justify-content: flex-start; /* Start align items from the left 
     }
 }
 
-/* Media query for screens with a width of 1080px or larger */
+ Media query for screens with a width of 1080px or larger 
 @media (min-width: 1080px) {
     .card {
-        height: 300px; /* Adjust the height for 1080px resolution */
+        height: 300px;  Adjust the height for 1080px resolution 
     }
 }
 
-/* Media query for screens with a width of 1440px or larger */
+ Media query for screens with a width of 1440px or larger 
 @media (min-width: 1440px) {
     .card {
-        height: 700px; /* Adjust the height for 1440px resolution */
+        height: 700px;  Adjust the height for 1440px resolution 
+    }
+}
+
+
+*/
+@media (max-width: 600px) {
+    .gallery {
+        margin-top: -500px !important; /* Adjust the negative margin as needed to move the gallery higher */
+        /* Any other mobile-specific styles you want to apply */
     }
 }
 
@@ -276,7 +287,7 @@ body {
     /* Adjust the width and height properties to control the card size */
     width: calc(25% - 20px); /* Adjust the width and gap as needed */
     min-width: 200px; /* Minimum card width */
-    
+        height: 300px; /* Default height for larger screens */
     border-radius: 16px;
     transition: 1000ms all;
     transform-origin: center left;
@@ -335,6 +346,7 @@ body {
     left: 0;
     width: 100%;
     z-index: -1;
+
 }
 
 /* Add margin to the content to create space between the navigation bar and the content */
