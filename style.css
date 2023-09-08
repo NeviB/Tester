@@ -163,7 +163,7 @@ body {
 @media (max-width: 600px) {
 
     body {
-        margin-top: 200px; /* Adjust as needed */
+        margin-top: -200px; /* Adjust as needed */
         padding: 0;
     }
 
