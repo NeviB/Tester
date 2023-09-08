@@ -241,7 +241,7 @@ body {
 @media (max-width: 600px) {
     .gallery {
         margin-top: -500px !important; /* Adjust the negative margin as needed to move the gallery higher */
-        margin-left: 100px !important;
+        margin-left: 75px !important;
         /* Any other mobile-specific styles you want to apply */
     }
 }
