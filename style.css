@@ -330,9 +330,18 @@ body {
 
 /*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
 .edge--bottom {
-  position: relative;
-  z-index: 1;
+    position: absolute;
+    top: calc(var(--navbar-height) - 60px); /* Move it 20px higher than the navigation bar */
+    left: 0;
+    width: 100%;
+    z-index: -1;
 }
+
+/* Add margin to the content to create space between the navigation bar and the content */
+.content {
+    margin-top: calc(var(--navbar-height) + 100px); /* Adjust the margin as needed */
+}
+
 .edge--bottom:after {
   background: inherit;
   content: "";
