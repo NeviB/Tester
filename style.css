@@ -238,29 +238,6 @@ body {
 
 
 
-/*
-@media (max-width: 600px) {
-    .gallery {
-        justify-content: flex-start; /* Start align items from the left 
-    }
-}
-
- Media query for screens with a width of 1080px or larger 
-@media (min-width: 1080px) {
-    .card {
-        height: 300px;  Adjust the height for 1080px resolution 
-    }
-}
-
- Media query for screens with a width of 1440px or larger 
-@media (min-width: 1440px) {
-    .card {
-        height: 700px;  Adjust the height for 1440px resolution 
-    }
-}
-
-
-*/
 @media (max-width: 600px) {
     .gallery {
         margin-top: -500px !important; /* Adjust the negative margin as needed to move the gallery higher */
