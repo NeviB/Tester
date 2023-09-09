@@ -33,10 +33,10 @@ body {
 /* Add this CSS for the background under everything */
 .background-under {
     position: fixed;
-    top: var(--backunder-heigh); /* Adjust for the height of your menu__bar */
+    top: var(--backunder-height); /* Adjust for the height of your menu__bar */
     left: 0;
     width: 100%;
-    height: calc(100vh - var(--backunder-heigh)); /* Calculate the height minus the menu__bar height */
+    height: calc(100vh - var(--backunder-height)); /* Calculate the height minus the menu__bar height */
     background-color: #E8E4C9; /* Set your desired background color */
     z-index: -2; /* Place it behind other elements */
 }
