@@ -11,13 +11,14 @@
 }
 
 
+
 body {
     overflow-x: hidden; /* Lock horizontal scrolling */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins;
-     background-color: #485253; /* Set the background color to #FFFCE2 */
+        background-color: #485253; /* Set the background color to #FFFCE2 */
 
 }
 
@@ -27,6 +28,8 @@ body {
     box-sizing: border-box;
     font-family: Borsok;
 }
+
+/* Add this CSS for the background under everything */
 .background-under {
     position: fixed;
     top: var(--navbar-height); /* Adjust for the height of your menu__bar */
@@ -286,7 +289,7 @@ body {
 
 .card h3 {
     font-size: 36px;
-    margin-left: 75px;
+    margin-left: 0px;
 }
 
 .card:hover {
@@ -298,10 +301,31 @@ body {
 @media (max-width: 600px) {
     .gallery {
  
-        transform: translateY(20%); /* Center horizontally */
+        transform: translate(-12%,10%); /* Center horizontally */
+        gap: 20px; /* Adjust the gap as needed */
     }
 
+}
 
+@media (max-width: 390px) {
+    .gallery .card {
+        width: calc(50% - 20px); /* Adjust the width and gap for smaller screens */
+        min-width: 150px; /* Minimum card width */
+        height: 400px; /* Adjust the height as needed */
+        /* Add any other styles you want for 390px screens */
+    }
+
+    .gallery .card img {
+        max-width: 100%; /* Adjust the maximum image width for 390px screens */
+        /* Adjust other image styles as needed */
+    }
+
+    .card h3 {
+        font-size: 24px;
+        text-align: center;
+        transform: translate(-10%,-20%); /* Center horizontally */
+
+        }
 }
 
 
@@ -441,7 +465,6 @@ body {
 }
 
 
-
 @media (max-width: 601px) {
   .coming-container {
     height: 100vh; /* Set a different height for mobile screens */
@@ -467,9 +490,6 @@ font-size: 10px;
 
 
 
-
-
-
 @media (min-width: 599px) {
   .coming-container {
     height: 100vh; /* Set a different height for mobile screens */
@@ -485,10 +505,11 @@ font-size: 10px;
 
   .Button-soon {
 padding: 5px 10px;
-bottom: 125px !important; /* Adjust the vertical position for mobile */
+bottom: 125px; /* Adjust the vertical position for mobile */
 font-size: 10px;
     }
 }
+
 
 /* -=-=-=-=-=-=-=-=- ComingSoon Image -=-=-=-=-=-=-=-=- */
 
@@ -536,6 +557,9 @@ font-size: 10px;
   }
 
 }
+
+
+
 
 
 
