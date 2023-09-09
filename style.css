@@ -17,7 +17,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins;
-        background-color: #E8E4C9; /* Set the background color to #FFFCE2 */
+     background-color: #485253; /* Set the background color to #FFFCE2 */
 
 }
 
@@ -27,16 +27,16 @@ body {
     box-sizing: border-box;
     font-family: Borsok;
 }
-
-body {
-    overflow-x: hidden; /* Lock horizontal scrolling */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Poppins;
-        background-color: #485253; /* Set the background color to #FFFCE2 */
-
+.background-under {
+    position: fixed;
+    top: var(--navbar-height); /* Adjust for the height of your menu__bar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the menu__bar height */
+    background-color: #E8E4C9; /* Set your desired background color */
+    z-index: -2; /* Place it behind other elements */
 }
+
 
 
 }
