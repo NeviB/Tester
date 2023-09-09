@@ -34,10 +34,10 @@ body {
 /* Add this CSS for the background under everything */
 .background-under {
     position: fixed;
-    top: calc(var(--navbar-height) + var(--backunder-height)); /* Set the top position to match the bottom of the navbar */
+    top: calc(var(--navbar-height) - 60px); /* Set the top position to match edge-bottom */
     left: 0;
     width: 100%;
-    height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the navbar height */
+    height: 100vh; /* Keeps it the same height as the viewport */
     background-color: #E8E4C9; /* Set your desired background color */
     z-index: -2; /* Place it behind other elements */
 }
@@ -340,7 +340,7 @@ body {
 /*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
 .edge--bottom {
     position: absolute;
-    height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the navbar height */
+    top: calc(var(--navbar-height) - 60px); /* Keep the same top position as background-under */
     left: 0;
     width: 100%;
     z-index: -1;
