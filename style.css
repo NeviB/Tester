@@ -393,7 +393,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   margin-top: 60px;
   }
 
