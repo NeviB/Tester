@@ -10,6 +10,11 @@
     --backgroundgal-border: #6B626C;
 }
 
+head{
+    background-color: #485253; /* Set the background color to #FFFCE2 */
+
+}
+
 body {
     overflow-x: hidden; /* Lock horizontal scrolling */
     margin: 0;
