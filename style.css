@@ -1,4 +1,4 @@
-:root {
+ :root {
     --primary: #DAD2C2; ;
     --primary-hover: #BFB098;                
     --background: #485253;
@@ -33,10 +33,10 @@ body {
 /* Add this CSS for the background under everything */
 .background-under {
     position: fixed;
-    top: var(--backunder-height); /* Adjust for the height of your menu__bar */
+    top: var( --navbar-height); /* Adjust for the height of your menu__bar */
     left: 0;
     width: 100%;
-    height: calc(100vh - var(--backunder-height) - var(--navbar-height)); /* Calculate the height minus the menu__bar and edge-bottom height */
+       height: calc(100vh - var( --navbar-height)); /* Calculate the height minus the 
     background-color: #E8E4C9; /* Set your desired background color */
     z-index: -2; /* Place it behind other elements */
 }
