@@ -10,10 +10,6 @@
     --backgroundgal-border: #6B626C;
 }
 
-head{
-    background-color: #485253; /* Set the background color to #FFFCE2 */
-
-}
 
 body {
     overflow-x: hidden; /* Lock horizontal scrolling */
@@ -30,6 +26,16 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Borsok;
+}
+
+body {
+    overflow-x: hidden; /* Lock horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+        background-color: #485253; /* Set the background color to #FFFCE2 */
+
 }
 
 
