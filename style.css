@@ -16,6 +16,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins;
+        background-color: #E8E4C9; /* Set the background color to #FFFCE2 */
 
 }
 
@@ -23,18 +24,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Poppins;
+    font-family: Borsok;
 }
 
-.background {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-/*    background-image: url(background.jpg); */
-    opacity: 1;
-    z-index: 1;
-    background-size: cover;
-    background-repeat: no-repeat;
+
 }
 
 .menu__wrapper {
@@ -56,6 +49,7 @@ body {
     background-color: var(--background);
     height: 60px;
     opacity: 0.9;
+        z-index: 1000; /* Add a high z-index to keep it on top */
 }
 
 .menu-icon {
@@ -238,34 +232,28 @@ body {
 
 
 
-@media (max-width: 600px) {
-    .gallery {
-        margin-top: -500px !important; /* Adjust the negative margin as needed to move the gallery higher */
-        margin-left: 75px !important;
-        /* Any other mobile-specific styles you want to apply */
-    }
-}
-
-
-
-
-
+/* Default styles for larger screens */
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust the gap as needed */
-   justify-content: center; /* Center the cards horizontally */
+    gap: 150px; /* Adjust the gap as needed */
+    justify-content: center; /* Center the cards horizontally */
     align-items: center; /* Center the cards vertically */
     max-width: 100%; /* Prevent horizontal overflow */
     margin: 0 auto; /* Center the gallery horizontally */
     padding: 20px; /* Add padding as needed */
+    margin-left: 75px;
+    z-index: -3;
+    transform: translate(5%, 200%);
+
+
 }
 
 .card {
     /* Adjust the width and height properties to control the card size */
     width: calc(25% - 20px); /* Adjust the width and gap as needed */
     min-width: 200px; /* Minimum card width */
-        height: 300px; /* Default height for larger screens */
+    height: 300px; /* Default height for larger screens */
     border-radius: 16px;
     transition: 1000ms all;
     transform-origin: center left;
@@ -273,47 +261,41 @@ body {
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
     /* Add any other card styles you need */
+    margin-bottom: 100px;
 }
 
 .card img {
     /* Reduce the size of the image */
-    max-width: 80%; /* Set an upper limit for the image width */
+    max-width: 50%; /* Set an upper limit for the image width */
     height: auto; /* Allow the height to adjust proportionally */
     max-height: 100%; /* Limit the image height to match the card's height */
     object-fit: cover;
     border-radius: 8px;
 }
 
+.card h3 {
+    font-size: 36px;
+    margin-left: 75px;
+}
 
 .card:hover {
     cursor: pointer;
     transform: scale(1.15);
 }
 
-/* .card:hover figcaption {
-    font-size: 0.6rem;
-    position: absolute;
-    height: 80px;
-    width: 160px;
-    display: flex;
-    align-items: end;
-  /*  background: linear-gradient(
-        to top, 
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0) 100%
-    );
-    color: white;
-    left: 0px;
-    bottom: 0px;
-    padding-left: 12px;
-    padding-bottom: 10px;
-}*/
+/* CSS for smaller screens (adjust the max-width and gap as needed) */
+@media (max-width: 600px) {
+    .gallery {
+ 
+        transform: translateY(20%); /* Center horizontally */
+    }
 
-.card:hover ~ .card {
-    font-weight: bold;
-    cursor: pointer;
-    transform: translateX(22px);
+
 }
+
+
+
+
 
 
 
@@ -387,3 +369,463 @@ body {
 /*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
 
 
+/* -=-=-=-=-=-=-=-=- Coming Soon Title -=-=-=-=-=-=-=-=- */
+.coming-image-container {
+  position: relative;
+  text-align: center;
+}
+.image-soon-title {
+  position: absolute;
+  top: 100px; /* Adjust this value */
+  left: 1%;
+  width: 100%;
+  padding: 10px;
+  color: black;
+  margin-top: 20px;
+  z-index: 1;
+}
+/* -=-=-=-=-=-=-=-=- Coming Soon Title -=-=-=-=-=-=-=-=- */
+
+
+
+/* -=-=-=-=-=-=-=-=- Coming Soon Image -=-=-=-=-=-=-=-=- */
+
+.coming-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh; /* Set the container to full viewport height */
+  opacity: 0.2; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
+  margin-bottom: 50px; /* Add margin to create space under the container */
+  transform: translateY(100%); /* Center horizontally */
+}
+
+..coming-container img {
+  max-width: 70%; /* Ensure the image doesn't exceed the container's width */
+  max-height: 70%; /* Ensure the image doesn't exceed the container's height */
+  width: auto; /* Maintain the aspect ratio */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: 150px; /* Adjust this value to move the image higher */
+}
+
+/* -=-=-=-=-=-=-=-=- ComingSoon Image -=-=-=-=-=-=-=-=- */
+
+/* -=-=-=-=-=-=-=-=- future Button -=-=-=-=-=-=-=-=- */
+.Button-soon {
+  background-color: #485253;
+  color: #FFFFFF; /* Correct the color value */
+  border: none;
+  text-align: center;
+  padding: 10px 20px;
+  position: absolute; /* Position the button absolutely */
+  bottom: 400px; /* Adjust the vertical position */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  font-family: 'Borsok', sans-serif;
+   z-index: 1; /* Place the rectangle on top of other elements */
+}
+
+.rounded-corners {
+  border-radius: 25px;
+}
+
+
+
+@media (max-width: 601px) {
+  .coming-container {
+    height: 100vh; /* Set a different height for mobile screens */
+    margin-bottom: 20px; /* Adjust margin for mobile screens */
+  }
+
+  .coming-container img {
+    max-width: 80%; /* Adjust the maximum width for mobile screens */
+    max-height: 80%; /* Adjust the maximum height for mobile screens */
+    margin-top: 50px; /* Adjust the margin for mobile screens */
+  }
+
+
+  .Button-soon {
+padding: 5px 10px;
+bottom: 250px; /* Adjust the vertical position for mobile screens */
+font-size: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 599px) {
+  .coming-container {
+    height: 100vh; /* Set a different height for mobile screens */
+    margin-bottom: 20px; /* Adjust margin for mobile screens */
+  }
+
+  .coming-container img {
+    max-width: 80%; /* Adjust the maximum width for mobile screens */
+    max-height: 80%; /* Adjust the maximum height for mobile screens */
+    margin-top: 50px; /* Adjust the margin for mobile screens */
+  }
+
+
+  .Button-soon {
+padding: 5px 10px;
+bottom: 125px !important; /* Adjust the vertical position for mobile */
+font-size: 10px;
+    }
+}
+
+/* -=-=-=-=-=-=-=-=- ComingSoon Image -=-=-=-=-=-=-=-=- */
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+  /* Adjust the styles for mobile screens here */
+  .image-container {
+    /* Mobile-specific styles for .image-container */
+    text-align: left; /* Adjust text alignment for mobile */
+    padding: 15px; /* Adjust padding for mobile */
+
+  }
+
+    .image-container img {
+    width: 150% !important; /* Set the width to a larger percentage for mobile */
+  }
+
+  .layered-background {
+    /* Mobile-specific styles for .layered-background */
+    flex-direction: column; /* Stack elements vertically on mobile */
+    justify-content: center; /* Center content vertically on mobile */
+    height: auto; /* Remove fixed height on mobile */
+    max-height: 50vh;
+
+  }
+  .image-container h3 {
+    font-size: 16px !important; /* Adjust font size for mobile screens */
+
+    top: -60px !important; /* Adjust the vertical position from the top */
+
+  }
+
+ .Button {
+    font-size: 12px !important; /* Set a smaller font size for mobile */
+    padding: 5px 10px !important; /* Adjust the padding for mobile */
+    bottom: 120px !important; /* Adjust the vertical position for mobile */
+    left: 56% !important; /* Adjust the horizontal position for mobile */
+  }
+
+}
+
+
+
+
+
+
+/*-=-=-=-=-=-=-=-=- News Rectangle Background -=-=-=-=-=-=-=-=-*/
+.layered-background {
+  position: relative;
+  width: 100%;
+  height: 820px; /* Adjust total height as needed */
+  margin-bottom: 50px; /* Add space at the bottom */
+  overflow: hidden; /* Hide overflowing content */
+    transform: translateY(150%); /* Center horizontally */
+
+}
+
+.diagonal-rectangle,
+.reversed-diagonal-rectangle {
+  position: absolute;
+  width: 100%; /* Stretch to full width */
+  height: 100%; /* Stretch to full height */
+}
+
+.gray {
+  background-color: #485253; /* Blue color */
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);                 
+  z-index: -1; /* Place behind the reversed-diagonal-rectangle */
+}
+
+.brown {
+  background-color: #BFB098; /* Red color */
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+}
+
+
+.image-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+  max-height: 80vh; /* Set the maximum height for the image */
+  width: auto;
+  height: auto;
+}
+/*-=-=-=-=-=-=-=-=- News Rectangle Background -=-=-=-=-=-=-=-=-*/
+
+
+
+
+/* -=-=-=-=-=-=-=-=- News Image -=-=-=-=-=-=-=-=- */
+
+/* Style for the image container */
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 20px auto 0;
+  padding: 10px;
+  position: relative; /* Change position to relative to contain absolute children */
+}
+
+/* Style for the image */
+.image-container img {
+  max-width: 40%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  margin-top:-20px;
+}
+
+.image-container:hover img {
+  animation: spinGrow 1s linear forwards;
+}
+
+@keyframes spinGrow {
+    0% {
+        transform: scale(0.2) rotate(0deg); /* Start very small and not rotated */
+    }
+    50% {
+        transform: scale(1.2) rotate(360deg); /* Spin while growing */
+    }
+    100% {
+        transform: scale(1) rotate(360deg); /* Return to normal size */
+    }
+}
+/* -=-=-=-=-=-=-=-=- News Image -=-=-=-=-=-=-=-=- */
+
+
+/* -=-=-=-=-=-=-=-=- News Button -=-=-=-=-=-=-=-=- */
+.Button {
+  background-color: #485253;
+  color: #FFFFFF; /* Correct the color value */
+  border: none;
+  text-align: center;
+  padding: 10px 20px;
+  position: absolute; /* Position the button absolutely */
+  bottom: -100px; /* Adjust the vertical position */
+  left: 54%; /* Center horizontally */
+  transform: translateX(-70%); /* Center horizontally */
+  font-family: 'Borsok', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.Button:hover {
+  background-color: #FFFFFF; /* Change the background color */
+  color: #485253; /* Change the text color */
+}
+
+.rounded-corners {
+  border-radius: 25px;
+}
+/* -=-=-=-=-=-=-=-=- News Button -=-=-=-=-=-=-=-=- */
+
+
+/* -=-=-=-=-=-=-=-=- News Title -=-=-=-=-=-=-=-=- */
+
+.image-container h3 {
+  font-size: 36px; /* Set the font size for the title */
+  color: #333; /* Set the text color */
+  margin: 0; /* Remove any default margin */
+  font-weight: bold; /* Make it bold */
+  
+  /* Adjust the title's vertical position */
+  position: absolute; /* Position it absolutely */
+  top: -70px; /* Adjust the vertical position from the top */
+  left: 53%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .image-container {
+    text-align: center; /* Center content horizontally for mobile */
+  }
+
+  .image-container img {
+    max-width: 60%; /* Reduce the maximum image width for mobile */
+  }
+
+/* Center title and button both horizontally and vertically for mobile */
+.image-container h3 {
+  font-size: 20px; /* Smaller font size for mobile screens */
+  top: 20%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, 50%); /* Center both horizontally and vertically */
+}
+
+.Button {
+  bottom: 20px; /* Adjust the vertical position for the button */
+  left: 50%; /* Center horizontally */
+    transform: translate(-64%, 600%); /* Center both horizontally and vertically */
+}
+}
+
+@media (min-width: 1440px) {
+
+      .image-container {
+    transform: translate(-52%, -55%); /* Center horizontally */
+
+  }
+
+  /* Adjust title and button positions for screens with a width of 1440px */
+  .image-container h3 {
+    font-size: 36px; /* Larger font size for screens with a width of 1440px */
+    top: -90px; /* Adjust the vertical position for the title */
+    left: 53%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+  }
+
+  .Button {
+    transform: translate(-75%, -150%); /* Center horizontally */
+  }
+    .layered-background {
+    height: 90vh; /* Increase the height for screens with a width of 1440px */
+  }
+  }
+
+
+
+
+
+/* -=-=-=-=-=-=-=-=- News Title -=-=-=-=-=-=-=-=- */
+
+
+
+/*-=-=-=-=-=-=-=-=- MEET THE TEAM Image -=-=-=-=-=-=-=-=-*/
+
+
+
+/* Existing CSS code */
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Decreased the gap for smaller screens */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Center the cards vertically */
+    max-width: 100%; /* Prevent horizontal overflow */
+    margin: 20px auto 0; /* Center the gallery horizontally and add some top margin */
+    padding: 10px; /* Reduced padding for smaller screens */
+    transform: translateY(400%); /* Center horizontally */
+}
+
+.team {
+    /* Adjust the width and height properties to control the card size */
+    width: calc(50% - 20px); /* Adjust the width and gap as needed for smaller screens */
+    min-width: 150px; /* Minimum card width */
+    height: auto; /* Allow height to adjust */
+    border-radius: 16px;
+    transition: 1000ms all;
+    transform-origin: center left;
+    display: flex; /* Add flex display to center the image */
+    flex-direction: column; /* Stack image and text vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    /* Add any other card styles you need */
+    margin-bottom: 20px; /* Increased margin for spacing on smaller screens */
+    margin-left:235px; /* Remove the left margin to center the text */
+
+
+}
+
+.team img {
+    /* Make the image responsive to screen width */
+    max-width: 80%; /* Reduce the maximum image width for mobile */
+    height: auto; /* Allow the height to adjust proportionally */
+    max-height: 100%; /* Limit the image height to match the card's height */
+    object-fit: cover;
+    border-radius: 8px;
+
+}
+
+.team h3 {
+    font-size: 24px; /* Smaller font size for mobile screens */
+    margin-left:264px; /* Remove the left margin to center the text */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add an ellipsis (...) if text overflows the container */
+}
+
+/* Existing CSS code */
+
+/* CSS for smaller screens (adjust the max-width and gap as needed) */
+@media (max-width: 600px) {
+    .team-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Decreased the gap for smaller screens */
+        justify-content: center; /* Center the cards horizontally */
+        align-items: center; /* Center the cards vertically */
+        max-width: 100%; /* Prevent horizontal overflow */
+        margin: 20px auto; /* Center the gallery horizontally and add some top margin */
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .team {
+        width: calc(90% - 20px); /* Adjust the width and gap for smaller screens */
+        min-width: 0; /* No minimum width */
+        margin-left: 110px; /* Remove the left margin to center the text */
+    }
+
+    .team img {
+        max-width: 70%; /* Reduce the maximum image width for mobile */
+    }
+
+    .team h3 {
+        font-size: 20px; /* Smaller font size for mobile screens */
+        margin-left: 35px; /* Remove the left margin to center the text */
+    }
+}
+
+
+/*-=-=-=-=-=-=-=-=- MEET THE TEAM Image -=-=-=-=-=-=-=-=-*/
+
+
+.team img:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
