@@ -3,7 +3,7 @@
     --primary-hover: #BFB098;                
     --background: #485253;
      --navbar-height: 60px;
-    --backunder-height: -1px;
+    --backunder-height: 0px;
 }
 
 :root {
@@ -36,7 +36,7 @@ body {
     top: var(--backunder-height); /* Adjust for the height of your menu__bar */
     left: 0;
     width: 100%;
-    height: calc(100vh - var(--backunder-height)); /* Calculate the height minus the menu__bar height */
+    height: calc(100vh - var(--backunder-height) - var(--navbar-height)); /* Calculate the height minus the menu__bar and edge-bottom height */
     background-color: #E8E4C9; /* Set your desired background color */
     z-index: -2; /* Place it behind other elements */
 }
