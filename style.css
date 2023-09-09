@@ -339,7 +339,7 @@ body {
 /*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
 .edge--bottom {
     position: absolute;
-    top: calc(var(--navbar-height) + var(--backunder-height)); /* Set the top position to match the bottom of the navbar */
+    height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the navbar height */
     left: 0;
     width: 100%;
     z-index: -1;
