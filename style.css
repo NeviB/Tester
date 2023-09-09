@@ -3,7 +3,7 @@
     --primary-hover: #BFB098;                
     --background: #485253;
      --navbar-height: 60px;
-    --backunder-height: 0px;
+    --backunder-height: -1px;
 }
 
 :root {
