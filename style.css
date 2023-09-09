@@ -20,6 +20,7 @@ body {
     box-sizing: border-box;
     font-family: Poppins;
         background-color: #485253; /* Set the background color to #FFFCE2 */
+    z-index: -2; /* Place it behind other elements */
 
 }
 
