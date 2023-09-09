@@ -343,8 +343,6 @@ body {
     top: calc(var(--navbar-height) - 60px); /* Keep the same top position as background-under */
     left: 0;
     width: 100%;
-    transform: scaleY(2); /* Adjust the scale factor as needed to make it taller */
-    transform-origin: top; /* Ensure scaling starts from the top */
     z-index: -1;
 
 }
