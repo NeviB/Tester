@@ -1,9 +1,8 @@
- :root {
+:root {
     --primary: #DAD2C2; ;
     --primary-hover: #BFB098;                
     --background: #485253;
      --navbar-height: 60px;
-    --backunder-height: 60px;
 }
 
 :root {
@@ -20,7 +19,6 @@ body {
     box-sizing: border-box;
     font-family: Poppins;
         background-color: #485253; /* Set the background color to #FFFCE2 */
-    z-index: -2; /* Place it behind other elements */
 
 }
 
@@ -34,14 +32,13 @@ body {
 /* Add this CSS for the background under everything */
 .background-under {
     position: fixed;
-    top: calc(var(--navbar-height) - 60px); /* Set the top position to match edge-bottom */
+    top: var(--navbar-height); /* Adjust for the height of your menu__bar */
     left: 0;
     width: 100%;
-    height: 100vh; /* Keeps it the same height as the viewport */
+    height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the menu__bar height */
     background-color: #E8E4C9; /* Set your desired background color */
     z-index: -2; /* Place it behind other elements */
 }
-
 
 
 
@@ -57,6 +54,8 @@ body {
 .menu__bar {
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -248,6 +247,13 @@ body {
 
 
 
+.content-container {
+ 
+}
+
+
+/* Default styles for larger screens */
+
 
 /* Default styles for larger screens */
 .gallery {
@@ -259,18 +265,17 @@ body {
     max-width: 100%; /* Prevent horizontal overflow */
     margin: 0 auto; /* Center the gallery horizontally */
     padding: 20px; /* Add padding as needed */
-    margin-left: 75px;
-    z-index: -3;
-    transform: translate(5%, 200%);
-
-
+     z-index: -3;
+    margin-top: 75%;
 }
+
+
+
 
 .card {
     /* Adjust the width and height properties to control the card size */
     width: calc(25% - 20px); /* Adjust the width and gap as needed */
     min-width: 200px; /* Minimum card width */
-    height: 300px; /* Default height for larger screens */
     border-radius: 16px;
     transition: 1000ms all;
     transform-origin: center left;
@@ -279,15 +284,19 @@ body {
     align-items: center; /* Center the content vertically */
     /* Add any other card styles you need */
     margin-bottom: 100px;
+
+
+
 }
 
 .card img {
     /* Reduce the size of the image */
-    max-width: 50%; /* Set an upper limit for the image width */
+    max-width: 80%; /* Set an upper limit for the image width */
     height: auto; /* Allow the height to adjust proportionally */
     max-height: 100%; /* Limit the image height to match the card's height */
     object-fit: cover;
     border-radius: 8px;
+
 }
 
 .card h3 {
@@ -297,23 +306,21 @@ body {
 
 .card:hover {
     cursor: pointer;
-    transform: scale(1.15);
+    transform: scale(1.15); /* Add the transform property back for hover effect */
 }
 
 /* CSS for smaller screens (adjust the max-width and gap as needed) */
 @media (max-width: 600px) {
     .gallery {
- 
         transform: translate(-12%,10%); /* Center horizontally */
         gap: 20px; /* Adjust the gap as needed */
     }
-
 }
 
-@media (max-width: 390px) {
+@media (max-width: 599px) {
     .gallery .card {
         width: calc(50% - 20px); /* Adjust the width and gap for smaller screens */
-        min-width: 150px; /* Minimum card width */
+        min-width: 200px; /* Minimum card width */
         height: 400px; /* Adjust the height as needed */
         /* Add any other styles you want for 390px screens */
     }
@@ -327,9 +334,13 @@ body {
         font-size: 24px;
         text-align: center;
         transform: translate(-10%,-20%); /* Center horizontally */
-
-        }
+    }
 }
+
+
+
+
+
 
 
 
@@ -340,7 +351,7 @@ body {
 /*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
 .edge--bottom {
     position: absolute;
-    top: calc(var(--navbar-height) - 60px); /* Keep the same top position as background-under */
+    top: calc(var(--navbar-height) - 60px); /* Move it 20px higher than the navigation bar */
     left: 0;
     width: 100%;
     z-index: -1;
@@ -391,7 +402,7 @@ body {
 
 .edge--bottom img {
   display: block;
-  width: 100%;
+  width: 120%;
   height: auto;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   margin-top: 60px;
@@ -411,6 +422,7 @@ body {
 .coming-image-container {
   position: relative;
   text-align: center;
+
 }
 .image-soon-title {
   position: absolute;
@@ -435,10 +447,10 @@ body {
   height: 150vh; /* Set the container to full viewport height */
   opacity: 0.2; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
   margin-bottom: 50px; /* Add margin to create space under the container */
-  transform: translateY(100%); /* Center horizontally */
+  transform: translateY(10%); /* Center horizontally */
 }
 
-..coming-container img {
+.coming-container img {
   max-width: 70%; /* Ensure the image doesn't exceed the container's width */
   max-height: 70%; /* Ensure the image doesn't exceed the container's height */
   width: auto; /* Maintain the aspect ratio */
@@ -493,10 +505,11 @@ font-size: 10px;
 
 
 
-@media (min-width: 599px) {
+@media (max-width: 599px) {
   .coming-container {
     height: 100vh; /* Set a different height for mobile screens */
     margin-bottom: 20px; /* Adjust margin for mobile screens */
+    transform: translateY(-5%);
   }
 
   .coming-container img {
@@ -510,6 +523,7 @@ font-size: 10px;
 padding: 5px 10px;
 bottom: 125px; /* Adjust the vertical position for mobile */
 font-size: 10px;
+transform: translate(-50%, -800%);
     }
 }
 
@@ -523,46 +537,46 @@ font-size: 10px;
 
 
 
-
+/*
 @media (max-width: 600px) {
-  /* Adjust the styles for mobile screens here */
+  /* Adjust the styles for mobile screens here 
   .image-container {
-    /* Mobile-specific styles for .image-container */
-    text-align: left; /* Adjust text alignment for mobile */
-    padding: 15px; /* Adjust padding for mobile */
+    /* Mobile-specific styles for .image-container 
+    text-align: left; /* Adjust text alignment for mobile 
+    padding: 15px; /* Adjust padding for mobile 
 
   }
 
     .image-container img {
-    width: 150% !important; /* Set the width to a larger percentage for mobile */
+    width: 150% !important; /* Set the width to a larger percentage for mobile 
   }
 
   .layered-background {
-    /* Mobile-specific styles for .layered-background */
-    flex-direction: column; /* Stack elements vertically on mobile */
-    justify-content: center; /* Center content vertically on mobile */
-    height: auto; /* Remove fixed height on mobile */
+    /* Mobile-specific styles for .layered-background 
+    flex-direction: column; /* Stack elements vertically on mobile 
+    justify-content: center; /* Center content vertically on mobile 
+    height: auto; /* Remove fixed height on mobile 
     max-height: 50vh;
 
   }
   .image-container h3 {
-    font-size: 16px !important; /* Adjust font size for mobile screens */
+    font-size: 16px !important; /* Adjust font size for mobile screens 
 
-    top: -60px !important; /* Adjust the vertical position from the top */
+    top: -60px !important; /* Adjust the vertical position from the top 
 
   }
 
  .Button {
-    font-size: 12px !important; /* Set a smaller font size for mobile */
-    padding: 5px 10px !important; /* Adjust the padding for mobile */
-    bottom: 120px !important; /* Adjust the vertical position for mobile */
-    left: 56% !important; /* Adjust the horizontal position for mobile */
+    font-size: 12px !important; /* Set a smaller font size for mobile 
+    padding: 5px 10px !important; /* Adjust the padding for mobile 
+    bottom: 120px !important; /* Adjust the vertical position for mobile 
+    left: 56% !important; /* Adjust the horizontal position for mobile 
   }
 
 }
 
 
-
+*/
 
 
 
@@ -576,7 +590,7 @@ font-size: 10px;
   height: 820px; /* Adjust total height as needed */
   margin-bottom: 50px; /* Add space at the bottom */
   overflow: hidden; /* Hide overflowing content */
-    transform: translateY(150%); /* Center horizontally */
+    transform: translateY(75%); /* Center horizontally */
 
 }
 
@@ -702,7 +716,11 @@ font-size: 10px;
 
 
 /* Mobile styles */
-@media (max-width: 600px) {
+@media (max-width: 599px) {
+    .layered-background{
+        max-height: 50vh;
+        transform: translateY(0%);
+    }
   .image-container {
     text-align: center; /* Center content horizontally for mobile */
   }
@@ -714,16 +732,26 @@ font-size: 10px;
 /* Center title and button both horizontally and vertically for mobile */
 .image-container h3 {
   font-size: 20px; /* Smaller font size for mobile screens */
-  top: 20%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, 50%); /* Center both horizontally and vertically */
+
+   
 }
 
 .Button {
-  bottom: 20px; /* Adjust the vertical position for the button */
-  left: 50%; /* Center horizontally */
-    transform: translate(-64%, 600%); /* Center both horizontally and vertically */
+transform: translate(-56%,-200%);
+ 
+    max-width: 50%;
+
+    font-size: 10px;
 }
+
+
+
+
+
+
+
+
+
 }
 
 @media (min-width: 1440px) {
@@ -772,7 +800,7 @@ font-size: 10px;
     max-width: 100%; /* Prevent horizontal overflow */
     margin: 20px auto 0; /* Center the gallery horizontally and add some top margin */
     padding: 10px; /* Reduced padding for smaller screens */
-    transform: translateY(400%); /* Center horizontally */
+    transform: translateY(300%); /* Center horizontally */
 }
 
 .team {
@@ -806,7 +834,7 @@ font-size: 10px;
 
 .team h3 {
     font-size: 24px; /* Smaller font size for mobile screens */
-    margin-left:264px; /* Remove the left margin to center the text */
+    transform: translateX(27%);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; /* Add an ellipsis (...) if text overflows the container */
@@ -814,34 +842,6 @@ font-size: 10px;
 
 /* Existing CSS code */
 
-/* CSS for smaller screens (adjust the max-width and gap as needed) */
-@media (max-width: 600px) {
-    .team-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px; /* Decreased the gap for smaller screens */
-        justify-content: center; /* Center the cards horizontally */
-        align-items: center; /* Center the cards vertically */
-        max-width: 100%; /* Prevent horizontal overflow */
-        margin: 20px auto; /* Center the gallery horizontally and add some top margin */
-        padding: 10px; /* Reduced padding for smaller screens */
-    }
-
-    .team {
-        width: calc(90% - 20px); /* Adjust the width and gap for smaller screens */
-        min-width: 0; /* No minimum width */
-        margin-left: 110px; /* Remove the left margin to center the text */
-    }
-
-    .team img {
-        max-width: 70%; /* Reduce the maximum image width for mobile */
-    }
-
-    .team h3 {
-        font-size: 20px; /* Smaller font size for mobile screens */
-        margin-left: 35px; /* Remove the left margin to center the text */
-    }
-}
 
 
 /*-=-=-=-=-=-=-=-=- MEET THE TEAM Image -=-=-=-=-=-=-=-=-*/
@@ -867,3 +867,401 @@ font-size: 10px;
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+
+/* CSS for smaller screens (adjust the max-width and gap as needed) */
+@media (max-width: 599px) {
+    .team-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Decreased the gap for smaller screens */
+        justify-content: center; /* Center the cards horizontally */
+        align-items: center; /* Center the cards vertically */
+        max-width: 100%; /* Prevent horizontal overflow */
+        margin: 20px auto; /* Center the gallery horizontally and add some top margin */
+        padding: 10px; /* Reduced padding for smaller screens */
+        margin-left: 10%;
+        transform: translate(-47%, 200%);
+    }
+
+
+    .team img {
+        max-width: 150%; /* Reduce the maximum image width for mobile */
+    }
+
+    .team h3 {
+        text-align: center;
+        font-size: 18px; /* Smaller font size for mobile screens */
+    }
+  
+}
+
+
+
+
+
+:root {
+    --footer-background: #121a29;
+    --text-color: #FAFBFC;
+    --text-gray: #FEFEFE;
+    --text-heading-gray: #F4F5F6;
+    --text-primary: #FAFBFC;
+    --button-color: #404652;
+    --button-border: #6B707C;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+/*? footer reset */
+*, *::after, *::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    background-color: #FAFBFC;
+}
+
+
+
+/* Apply the edge-top styles to the background */
+.edge--top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45%; /* Set the height to match the footer */
+    z-index: -1; /* Place it behind other elements */
+    background-color: #BFB098; /* Set the background color for the background */
+    transform: translateY(1406%); /* Move it above the footer */
+}
+
+.edge--top:before {
+    background: inherit;
+    content: "";
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+}
+
+.edge--top:before {
+    top: 0;
+    transform: skewY(1.5deg);
+    transform-origin: 100% 0;
+}
+
+/* Apply the reverse edge-top styles to the background */
+.edge--top-reverse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45%; /* Set the height to match the footer */
+    z-index: -1; /* Place it behind other elements */
+    background-color: black; /* Set the background color for the background */
+    transform: translateY(1406%); /* Move it below the header */
+}
+
+.edge--top-reverse:before {
+    background: inherit;
+    content: "";
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+}
+
+.edge--top-reverse:before {
+    bottom: 0; /* Change top to bottom */
+    transform: skewY(-1.5deg); /* Reverse the skew angle */
+    transform-origin: 100% 100%; /* Flip on the y-axis */
+}
+
+
+
+
+.layered-background2 {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust total height as needed */
+  margin-bottom: 50px; /* Add space at the bottom */
+  overflow: hidden; /* Hide overflowing content */
+    transform: translateY(75%); /* Center horizontally */
+
+}
+
+.diagonal-rectangle2,
+.reversed-diagonal-rectangle2 {
+  position: absolute;
+  width: 100%; /* Stretch to full width */
+  height: 100%; /* Stretch to full height */
+}
+
+.gray2 {
+  background-color: #BFB098; /* Blue color */
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);                 
+  z-index: -2; /* Place behind the reversed-diagonal-rectangle */
+}
+
+.brown2 {
+  background-color: black; /* Red color */
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+  z-index: -1
+}
+
+
+
+
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: transparent;
+    min-width: 300px;
+    width: 100vw;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60%;
+}
+
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 16px;
+   
+    width: 70%; /* Add this line to stretch horizontally */
+    margin-top: 80px; /* Adjust the margin-top value as needed */
+
+}
+
+
+/*? top section */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    padding: 16px 0px;
+    justify-content: space-between;
+}
+
+.footer-line {
+    display: block;
+    width: 100%;
+    height: 8px;
+}
+
+/*? footer subscribe */
+.footer-subscribe {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-subscribe > input {
+    border: 1px solid var(--button-border);
+    color: var(--text-color);
+    outline: none;
+    min-height: 36px;
+    background-color: var(--footer-background);
+    font-size: 1.2rem;
+    flex: 1 0 120px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.footer-subscribe > input::placeholder {
+    color: var(--text-color);
+}
+
+.footer-subscribe > button {
+    cursor: pointer;
+    background-color: var(--button-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.25rem;
+    min-width: 120px;
+    min-height: 36px;
+    flex: 1 0 80px;
+    white-space: nowrap;
+    padding: 8px 12px;
+    border: 0px;
+    outline: none;
+    border: 1px solid var(--button-border);
+}
+
+/*? footer columns */
+.footer-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    flex: 2 0 140px;
+    width: 100%;
+    gap: 16px;
+    padding: 24px 8px 16px 8px;
+    margin: 0 auto;
+}
+
+.footer-columns ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-columns ul a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-columns ul a:hover{
+    text-decoration: underline;
+}
+
+.footer-columns ul li {
+    margin-bottom: 16px;
+}
+
+.footer-columns h3 {
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.125rem;
+}
+
+.footer-centering {
+    margin: 0 auto;
+}
+
+.footer-columns > section {
+    min-width: 150px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: 16px;
+    color: var(--text-color);
+    margin-bottom: 60px;
+}
+
+.footer-logo svg {
+    stroke: var(--text-color);
+    stroke-width: 8px;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+/*? Footer bottom */
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 48px; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    padding: 16px 0px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: var(--text-gray);
+}
+
+.footer-bottom > small {
+    font-size: 16px;
+    margin: 0 4px;
+}
+
+.footer-headline > h2 {
+    margin: 0px;
+    color: var(--text-primary);
+}
+
+.footer-headline > p {
+    color: var(--text-gray);
+    margin: 4px 0px 20px 0px;
+}
+
+.footer-line {
+    display: block;
+    min-width: 40px;
+    height: 2px;
+    background-color: var(--text-gray);
+}
+
+/*? socials */
+
+.social-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.social-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.social-links ul {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+}
+
+/*? mobile */
+
+@media (max-width: 800px) {
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px 8px 32px 8px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: space-between;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
