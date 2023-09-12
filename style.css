@@ -336,6 +336,9 @@ body {
         text-align: center;
         transform: translate(-10%,-20%); /* Center horizontally */
     }
+          body {
+    overflow-x: hidden; /* Hide horizontal overflow */
+  }
 }
 
 
