@@ -262,11 +262,12 @@ body {
     gap: 150px; /* Adjust the gap as needed */
     justify-content: center; /* Center the cards horizontally */
     align-items: center; /* Center the cards vertically */
-    max-width: 100%; /* Prevent horizontal overflow */
+    max-width: 80%; /* Prevent horizontal overflow */
     margin: 0 auto; /* Center the gallery horizontally */
     padding: 20px; /* Add padding as needed */
      z-index: -3;
     margin-top: 75%;
+
 }
 
 
@@ -312,7 +313,7 @@ body {
 /* CSS for smaller screens (adjust the max-width and gap as needed) */
 @media (max-width: 600px) {
     .gallery {
-        transform: translate(-12%,10%); /* Center horizontally */
+        transform: translate(-2%,10%); /* Center horizontally */
         gap: 20px; /* Adjust the gap as needed */
     }
 }
@@ -402,7 +403,7 @@ body {
 
 .edge--bottom img {
   display: block;
-  width: 120%;
+  width: 100%;
   height: auto;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   margin-top: 60px;
@@ -639,19 +640,20 @@ transform: translate(-50%, -800%);
   align-items: center;
   max-width: 100%;
   margin: 20px auto 0;
-  padding: 10px;
+
   position: relative; /* Change position to relative to contain absolute children */
 }
 
 /* Style for the image */
 .image-container img {
-  max-width: 40%;
+    width: 40%; /* Remove max-width and use auto */
   height: auto;
   max-height: 100%;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
   margin-top:-20px;
+    pointer-events: none; /* Disable pointer events on the image itself */
 }
 
 .image-container:hover img {
@@ -800,7 +802,7 @@ transform: translate(-56%,-200%);
     max-width: 100%; /* Prevent horizontal overflow */
     margin: 20px auto 0; /* Center the gallery horizontally and add some top margin */
     padding: 10px; /* Reduced padding for smaller screens */
-    transform: translateY(300%); /* Center horizontally */
+    transform: translate(-5%,250%); /* Center horizontally */
 }
 
 .team {
@@ -824,7 +826,7 @@ transform: translate(-56%,-200%);
 
 .team img {
     /* Make the image responsive to screen width */
-    max-width: 80%; /* Reduce the maximum image width for mobile */
+    max-width: 100%; /* Reduce the maximum image width for mobile */
     height: auto; /* Allow the height to adjust proportionally */
     max-height: 100%; /* Limit the image height to match the card's height */
     object-fit: cover;
@@ -834,7 +836,7 @@ transform: translate(-56%,-200%);
 
 .team h3 {
     font-size: 24px; /* Smaller font size for mobile screens */
-    transform: translateX(27%);
+    transform: translateX(37%);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; /* Add an ellipsis (...) if text overflows the container */
@@ -892,6 +894,7 @@ transform: translate(-56%,-200%);
     .team h3 {
         text-align: center;
         font-size: 18px; /* Smaller font size for mobile screens */
+        transform: translateX(23%);
     }
   
 }
@@ -927,68 +930,12 @@ body {
     background-color: #FAFBFC;
 }
 
+@media (max-width: 599px) {
 
-
-/* Apply the edge-top styles to the background */
-.edge--top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 45%; /* Set the height to match the footer */
-    z-index: -1; /* Place it behind other elements */
-    background-color: #BFB098; /* Set the background color for the background */
-    transform: translateY(1406%); /* Move it above the footer */
+.footer-wrapper{
+    transform: translate(-10%,5%);
 }
-
-.edge--top:before {
-    background: inherit;
-    content: "";
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    -webkit-backface-visibility: hidden;
 }
-
-.edge--top:before {
-    top: 0;
-    transform: skewY(1.5deg);
-    transform-origin: 100% 0;
-}
-
-/* Apply the reverse edge-top styles to the background */
-.edge--top-reverse {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 45%; /* Set the height to match the footer */
-    z-index: -1; /* Place it behind other elements */
-    background-color: black; /* Set the background color for the background */
-    transform: translateY(1406%); /* Move it below the header */
-}
-
-.edge--top-reverse:before {
-    background: inherit;
-    content: "";
-    display: block;
-    height: 50%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    -webkit-backface-visibility: hidden;
-}
-
-.edge--top-reverse:before {
-    bottom: 0; /* Change top to bottom */
-    transform: skewY(-1.5deg); /* Reverse the skew angle */
-    transform-origin: 100% 100%; /* Flip on the y-axis */
-}
-
 
 
 
@@ -998,7 +945,7 @@ body {
   height: auto; /* Adjust total height as needed */
   margin-bottom: 50px; /* Add space at the bottom */
   overflow: hidden; /* Hide overflowing content */
-    transform: translateY(75%); /* Center horizontally */
+    transform: translateY(80%); /* Center horizontally */
 
 }
 
@@ -1039,12 +986,13 @@ footer {
 }
 
 
+
 .footer-wrapper {
     display: flex;
     flex-direction: column;
     max-width: 100%;
     padding: 16px;
-   
+   height:20%;
     width: 70%; /* Add this line to stretch horizontally */
     margin-top: 80px; /* Adjust the margin-top value as needed */
 
@@ -1163,14 +1111,27 @@ footer {
     color: var(--text-color);
     margin-bottom: 60px;
 }
-
+/*
 .footer-logo svg {
     stroke: var(--text-color);
     stroke-width: 8px;
     width: 50px;
     height: 50px;
+}*/
+
+.footer-logo {
+  position: relative;
+  max-width: 30%; /* Adjust the maximum width of the image */
+  max-height: 30%; /* Adjust the maximum height of the image */
+
 }
 
+.footer-logo img{
+  width: 100%; /* Make the image take up 100% of the container's width */
+  height: auto; /* Allow the image to maintain its aspect ratio */
+  opacity: 0.4; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
+
+}
 
 
 /*? Footer bottom */
