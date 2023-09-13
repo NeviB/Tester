@@ -526,8 +526,8 @@ font-size: 10px;
   }
 
   .coming-container img {
-    max-width: 80%; /* Adjust the maximum width for mobile screens */
-    max-height: 80%; /* Adjust the maximum height for mobile screens */
+    max-width: 100%; /* Adjust the maximum width for mobile screens */
+    max-height: 100%; /* Adjust the maximum height for mobile screens */
     margin-top: 50px; /* Adjust the margin for mobile screens */
   }
 
@@ -745,7 +745,7 @@ transform: translate(-50%, -800%);
   }
 
   .image-container img {
-    max-width: 60%; /* Reduce the maximum image width for mobile */
+    width: 60%; /* Reduce the maximum image width for mobile */
   }
 
 /* Center title and button both horizontally and vertically for mobile */
@@ -900,18 +900,19 @@ transform: translate(-56%,-180%);
         margin: 20px auto; /* Center the gallery horizontally and add some top margin */
         padding: 10px; /* Reduced padding for smaller screens */
         margin-left: 10%;
-        transform: translate(-47%, 200%);
+        transform: translate(-60%, 100%);
     }
 
 
     .team img {
-        max-width: 150%; /* Reduce the maximum image width for mobile */
+        max-width: 200%; /* Reduce the maximum image width for mobile */
+        
     }
 
     .team h3 {
         text-align: center;
         font-size: 18px; /* Smaller font size for mobile screens */
-        transform: translateX(23%);
+        transform: translateX(45%);
     }
   
 }
