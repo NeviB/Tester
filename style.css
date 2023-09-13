@@ -37,7 +37,7 @@ body {
     width: 100%;
     height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the menu__bar height */
     background-image: url(background.jpg);
-  
+    background-color: #E8E4C9; /* Set your desired background color */
     z-index: -2; /* Place it behind other elements */
 }
 
@@ -410,8 +410,9 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 .edge--bottom img {
   display: block;
-  width: 120%;
+  max-width: 100%;
   height: auto;
+   width: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   margin-top: 60px;
   }
