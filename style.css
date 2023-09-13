@@ -752,7 +752,7 @@ transform: translate(-50%, -600%);
 /* Mobile styles */
 @media (max-width: 599px) {
     .layered-background{
-        max-height: 50vh;
+        max-height: 55vh;
         transform: translateY(100%);
     }
   .image-container {
