@@ -915,20 +915,19 @@ transform: translate(-56%,-200%);
         margin: 20px auto; /* Center the gallery horizontally and add some top margin */
         padding: 10px; /* Reduced padding for smaller screens */
         margin-left: 10%;
-        transform: translate(-71%, 250%);
+        transform: translate(-60%, 300%);
     }
 
 
     .team img {
-        max-width: 250%; /* Reduce the maximum image width for mobile */
-        height: 80%;
+        max-width: 200%; /* Reduce the maximum image width for mobile */
         
     }
 
     .team h3 {
         text-align: center;
         font-size: 18px; /* Smaller font size for mobile screens */
-        transform: translateX(62%);
+        transform: translateX(45%);
     }
   
 }
