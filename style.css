@@ -17,7 +17,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Poppins;
         background-color: #485253; /* Set the background color to #FFFCE2 */
 
 }
@@ -26,7 +25,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Borsok;
+    font-family: 'Mochiy Pop P One';
+    font-weight: bold;
 }
 
 /* Add this CSS for the background under everything */
@@ -66,6 +66,7 @@ body {
     height: 60px;
     opacity: 0.9;
         z-index: 1000; /* Add a high z-index to keep it on top */
+
 }
 
 .menu-icon {
@@ -104,6 +105,10 @@ body {
   align-items: center; /* Center items vertically */
   gap: 5px; /* Adjust the gap between images */
     
+}
+
+.social-wrapper img:hover {
+    transform: scale(1.1);
 }
 
 .social-wrapper img {
@@ -246,12 +251,6 @@ body {
 
 
 
-
-.content-container {
- 
-}
-
-
 /* Default styles for larger screens */
 
 
@@ -286,7 +285,7 @@ body {
     /* Add any other card styles you need */
     margin-bottom: 100px;
 
-
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -301,14 +300,19 @@ body {
 }
 
 .card h3 {
-    font-size: 36px;
+    font-size: 200%;
     margin-left: 0px;
+    transform: translateX(20%);
 }
+
 
 .card:hover {
     cursor: pointer;
     transform: scale(1.15); /* Add the transform property back for hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
+
+
 
 /* CSS for smaller screens (adjust the max-width and gap as needed) */
 @media (max-width: 600px) {
@@ -332,13 +336,10 @@ body {
     }
 
     .card h3 {
-        font-size: 24px;
+        font-size: 160%;
         text-align: center;
-        transform: translate(-10%,-20%); /* Center horizontally */
+        transform: translate(0%,-30%); /* Center horizontally */
     }
-          body {
-    overflow-x: hidden; /* Hide horizontal overflow */
-  }
 }
 
 
@@ -414,12 +415,14 @@ body {
 
 .block {
   color: #fff;
-  font-family: "Fira Sans", sans-serif;
   margin: 0 0 100px; /* creates space between sections of the website */
   padding: 20% 20px;
   text-align: center;
 }
 /*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
+
+
+
 
 
 /* -=-=-=-=-=-=-=-=- Coming Soon Title -=-=-=-=-=-=-=-=- */
@@ -475,7 +478,7 @@ body {
   bottom: 400px; /* Adjust the vertical position */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Center horizontally */
-  font-family: 'Borsok', sans-serif;
+  font-family: 'Mochiy Pop P One', sans-serif;
    z-index: 1; /* Place the rectangle on top of other elements */
 }
 
@@ -529,6 +532,10 @@ bottom: 125px; /* Adjust the vertical position for mobile */
 font-size: 10px;
 transform: translate(-50%, -800%);
     }
+
+      body {
+    overflow-x: hidden; /* Hide horizontal overflow */
+  }
 }
 
 
@@ -688,8 +695,9 @@ transform: translate(-50%, -800%);
   bottom: -100px; /* Adjust the vertical position */
   left: 54%; /* Center horizontally */
   transform: translateX(-70%); /* Center horizontally */
-  font-family: 'Borsok', sans-serif;
+  font-family: 'Mochiy Pop P One', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth color change */
+    z-index: 7;
 }
 
 .Button:hover {
@@ -706,7 +714,7 @@ transform: translate(-50%, -800%);
 /* -=-=-=-=-=-=-=-=- News Title -=-=-=-=-=-=-=-=- */
 
 .image-container h3 {
-  font-size: 36px; /* Set the font size for the title */
+  font-size: 42%; /* Set the font size for the title */
   color: #333; /* Set the text color */
   margin: 0; /* Remove any default margin */
   font-weight: bold; /* Make it bold */
@@ -736,17 +744,17 @@ transform: translate(-50%, -800%);
 
 /* Center title and button both horizontally and vertically for mobile */
 .image-container h3 {
-  font-size: 20px; /* Smaller font size for mobile screens */
+  font-size: 125%; /* Smaller font size for mobile screens */
 
    
 }
 
 .Button {
-transform: translate(-56%,-200%);
+transform: translate(-56%,-180%);
  
     max-width: 50%;
 
-    font-size: 10px;
+    font-size: 50%;
 }
 
 
@@ -768,7 +776,7 @@ transform: translate(-56%,-200%);
 
   /* Adjust title and button positions for screens with a width of 1440px */
   .image-container h3 {
-    font-size: 36px; /* Larger font size for screens with a width of 1440px */
+    font-size: 250%; /* Larger font size for screens with a width of 1440px */
     top: -90px; /* Adjust the vertical position for the title */
     left: 53%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
@@ -838,8 +846,8 @@ transform: translate(-56%,-200%);
 }
 
 .team h3 {
-    font-size: 24px; /* Smaller font size for mobile screens */
-    transform: translateX(37%);
+    font-size: 300%; /* Smaller font size for mobile screens */
+    transform: translate(24%,-100%);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; /* Add an ellipsis (...) if text overflows the container */
@@ -910,16 +918,12 @@ transform: translate(-56%,-200%);
     --footer-background: #121a29;
     --text-color: #FAFBFC;
     --text-gray: #FEFEFE;
-    --text-heading-gray: #F4F5F6;
     --text-primary: #FAFBFC;
     --button-color: #404652;
     --button-border: #6B707C;
 }
 
-html {
-    font-size: 16px;
-    font-family: 'Red Hat Display', sans-serif;
-}
+
 
 /*? footer reset */
 *, *::after, *::before {
@@ -1226,6 +1230,23 @@ footer {
 
 
 
+/* Add this CSS to style the bottom bar */
+.bottom-bar {
+  position: absolute; /* Use absolute positioning */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #485253; /* Choose your desired background color */
+  color: #fff; /* Choose your desired text color */
+  text-align: center;
+  padding: 10px 0; /* Adjust padding as needed */
+  z-index: 1000; /* Adjust the z-index to ensure it's on top of other content */
+  transform: translateY(14009%);
+}
 
+@media (max-width: 599px) {
+.bottom-bar{
+    transform: translateY(13662%);
+}
 
-
+}
