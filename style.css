@@ -328,6 +328,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         min-width: 275px; /* Minimum card width */
         height: 400px; /* Adjust the height as needed */
         /* Add any other styles you want for 390px screens */
+        transform: translate(-2%,100%); /* Center horizontally */
     }
 
     .gallery .card img {
@@ -535,7 +536,7 @@ font-size: 10px;
   .coming-container {
     height: 100vh; /* Set a different height for mobile screens */
     margin-bottom: 20px; /* Adjust margin for mobile screens */
-    transform: translateY(-5%);
+    transform: translateY(50%);
   }
 
   .coming-container img {
@@ -752,7 +753,7 @@ transform: translate(-50%, -600%);
 @media (max-width: 599px) {
     .layered-background{
         max-height: 50vh;
-        transform: translateY(0%);
+        transform: translateY(100%);
     }
   .image-container {
     text-align: center; /* Center content horizontally for mobile */
@@ -914,7 +915,7 @@ transform: translate(-56%,-180%);
         margin: 20px auto; /* Center the gallery horizontally and add some top margin */
         padding: 10px; /* Reduced padding for smaller screens */
         margin-left: 10%;
-        transform: translate(-60%, 100%);
+        transform: translate(-60%, 300%);
     }
 
 
@@ -1254,7 +1255,7 @@ footer {
 
 @media (max-width: 599px) {
 .layered-background2{
-    transform: translateY(15%);
+    transform: translateY(40%);
 max-height: 100%;
 
  max-width: 100%;
@@ -1309,7 +1310,7 @@ margin-bottom: 50%;
 
 @media (max-width: 599px) {
 .bottom-bar{
-    transform: translateY(160%);
+    transform: translateY(800%);
 }
 
     }
