@@ -407,7 +407,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 .edge--bottom img {
   display: block;
-  width: 100%;
+  width: 120%;
   height: auto;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   margin-top: 60px;
@@ -422,7 +422,20 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 /*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
 
 
+@media (max-width: 599px) {
+    .edge--bottom{
+        width:100%;
+  height: 30%; /* Set the height of the image to 100% of the container */
 
+    }
+    .edge--bottom img {
+ width: 100%; /* Set the width of the image to 100% of the container */
+  height: 100%; /* Set the height of the image to 100% of the container */
+  object-fit: cover; /* This property centers the image and fills the container, cropping any excess */
+
+    }
+
+}
 
 
 
@@ -528,6 +541,7 @@ font-size: 10px;
   .coming-container img {
     max-width: 100%; /* Adjust the maximum width for mobile screens */
     max-height: 100%; /* Adjust the maximum height for mobile screens */
+    height: 50%;
     margin-top: 50px; /* Adjust the margin for mobile screens */
   }
 
@@ -536,7 +550,7 @@ font-size: 10px;
 padding: 5px 10px;
 bottom: 125px; /* Adjust the vertical position for mobile */
 font-size: 10px;
-transform: translate(-50%, -800%);
+transform: translate(-50%, -600%);
     }
 
       body {
