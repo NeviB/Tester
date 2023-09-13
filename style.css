@@ -325,7 +325,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 @media (max-width: 599px) {
     .gallery .card {
         width: calc(50% - 20px); /* Adjust the width and gap for smaller screens */
-        min-width: 200px; /* Minimum card width */
+        min-width: 275px; /* Minimum card width */
         height: 400px; /* Adjust the height as needed */
         /* Add any other styles you want for 390px screens */
     }
@@ -420,6 +420,12 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 /*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
+
+
+
+
+
+
 
 
 
@@ -990,6 +996,7 @@ footer {
     align-items: center;
     flex-direction: column;
     margin-top: 60%;
+
 }
 
 
@@ -1117,6 +1124,7 @@ footer {
     gap: 16px;
     color: var(--text-color);
     margin-bottom: 60px;
+    transform: translateX(70%);
 }
 /*
 .footer-logo svg {
@@ -1128,8 +1136,8 @@ footer {
 
 .footer-logo {
   position: relative;
-  max-width: 30%; /* Adjust the maximum width of the image */
-  max-height: 30%; /* Adjust the maximum height of the image */
+  max-width: 35%; /* Adjust the maximum width of the image */
+  max-height: 35%; /* Adjust the maximum height of the image */
 
 }
 
@@ -1229,10 +1237,50 @@ footer {
 }
 
 
+@media (max-width: 599px) {
+.layered-background2{
+    transform: translateY(15%);
+max-height: 100%;
+
+ max-width: 100%;
+
+
+
+}
+.footer-logo img{
+display: none;
+
+}
+.footer-subscribe input{
+    width:40%;
+}
+
+.footer-wrapper{
+    transform: translate(0%,10%);
+
+}
+.footer-subscribe{
+    font-size:50%;
+
+
+}
+.footer-columns{
+    font-size:60%;
+    width:200%;
+
+}
+.footer-bottom{
+margin-bottom: 50%;
+
+}
+
+    }
+
+
 
 /* Add this CSS to style the bottom bar */
 .bottom-bar {
-  position: absolute; /* Use absolute positioning */
+  position: relative; /* Use fixed positioning */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1241,12 +1289,12 @@ footer {
   text-align: center;
   padding: 10px 0; /* Adjust padding as needed */
   z-index: 1000; /* Adjust the z-index to ensure it's on top of other content */
-  transform: translateY(14009%);
+  margin-top: 27%;
 }
 
 @media (max-width: 599px) {
 .bottom-bar{
-    transform: translateY(13662%);
+    transform: translateY(160%);
 }
 
-}
+    }
