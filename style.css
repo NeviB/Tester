@@ -337,6 +337,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     .gallery .card img {
         max-width: 100%; /* Adjust the maximum image width for 390px screens */
         /* Adjust other image styles as needed */
+        transform: translateX(-2%);
     }
 
     .card h3 {
