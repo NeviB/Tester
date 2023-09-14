@@ -687,13 +687,7 @@ margin-bottom: 50%;
   text-align: center;
   padding: 10px 0; /* Adjust padding as needed */
   z-index: 1000; /* Adjust the z-index to ensure it's on top of other content */
-transform: translateY(180%);
 }
 
-@media (max-width: 599px) {
-.bottom-bar{
-    transform: translateY(900%);
-}
 
-    }
 
