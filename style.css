@@ -37,6 +37,7 @@ body {
     width: 100%;
     height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the menu__bar height */
     background-image: url(background.jpg);
+    background-repeat: repeat /* Will be taken out, testing */
     background-color: #E8E4C9; /* Set your desired background color */
     z-index: -2; /* Place it behind other elements */
 }
@@ -262,7 +263,7 @@ body {
     gap: 150px; /* Adjust the gap as needed */
     justify-content: center; /* Center the cards horizontally */
     align-items: center; /* Center the cards vertically */
-    max-width: 80%; /* Prevent horizontal overflow */
+    max-width: 60%; /* Prevent horizontal overflow */
     margin: 0 auto; /* Center the gallery horizontally */
     padding: 20px; /* Add padding as needed */
      z-index: -3;
@@ -276,7 +277,7 @@ body {
 .card {
     /* Adjust the width and height properties to control the card size */
     width: calc(25% - 20px); /* Adjust the width and gap as needed */
-    min-width: 200px; /* Minimum card width */
+    min-width: 20%; /* Minimum card width */
     border-radius: 16px;
     transition: 1000ms all;
     transform-origin: center left;
@@ -297,13 +298,14 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-height: 100%; /* Limit the image height to match the card's height */
     object-fit: cover;
     border-radius: 8px;
+    transform: translateX(13%);
 
 }
 
 .card h3 {
     font-size: 200%;
     margin-left: 0px;
-    transform: translateX(20%);
+    transform: translateX(13%);
 }
 
 
@@ -344,12 +346,12 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
 }
-
-
-
-
-
-
+@media screen and (min-width: 2500px) {
+    .card h3 {
+        text-align: center;
+        transform: translateX(-10%);
+    }
+}
 
 
 
@@ -935,7 +937,13 @@ transform: translate(-56%,-200%);
   
 }
 
+@media screen and (min-width: 2500px) {
 
+    .team h3{
+        transform: translate(31%, -40%);
+    }
+
+}
 
 
 
@@ -1322,3 +1330,16 @@ margin-bottom: 50%;
 
     }
 
+@media screen and (min-width: 2500px) {
+.footer-wrapper{
+    transform: translateY(5%);
+    margin-bottom: 1%;
+
+}
+
+.bottom-bar{
+    margin-top: 24.5%;
+}
+
+
+}
