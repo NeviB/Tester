@@ -1321,26 +1321,5 @@ margin-bottom: 50%;
   text-align: center;
   padding: 10px 0; /* Adjust padding as needed */
   z-index: 1000; /* Adjust the z-index to ensure it's on top of other content */
-  margin-top: 27%;
 }
 
-@media (max-width: 599px) {
-.bottom-bar{
-    transform: translateY(800%);
-}
-
-    }
-
-@media screen and (min-width: 2500px) {
-.footer-wrapper{
-    transform: translateY(5%);
-    margin-bottom: 1%;
-
-}
-
-.bottom-bar{
-    margin-top: 24.5%;
-}
-
-
-}
