@@ -1,284 +1,707 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RiceByte Studios</title>
-    <link rel="stylesheet" href="news.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/borsok" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link href='https://fonts.googleapis.com/css?family=Mochiy Pop P One' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-</head>
-<body>
+:root {
+    --primary: #DAD2C2; ;
+    --primary-hover: #BFB098;                
+    --background: #485253;
+     --navbar-height: 60px;
+}
+
+:root {
+    --backgroundgal: #3C343D;
+    --backgroundgal-border: #6B626C;
+}
+
+
+
+body {
+    overflow-x: hidden; /* Lock horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        background-color: #485253; /* Set the background color to #FFFCE2 */
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mochiy Pop P One';
+    font-weight: bold;
+}
+
+/* Add this CSS for the background under everything */
+.background-but{
+    position: fixed;
+    top: var(--navbar-height); /* Adjust for the height of your menu__bar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the menu__bar height */
+   
+   
+    background-color: #E8E4C9; /* Set your desired background color */
+    z-index: -2; /* Place it behind other elements */
+}
+
+
+
+}
+
+.menu__wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    z-index: 2;  
+}
+
+.menu__bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 24px;
+    gap: 32px;
+    background-color: var(--background);
+    height: 60px;
+    opacity: 0.9;
+        z-index: 1000; /* Add a high z-index to keep it on top */
+
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    height: 32px;
+    width: 32px;
+}
+
+.navigation {    
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    gap: 24px;
+    padding: 0px;
+    background-color: var(--background);
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
+
+.logo-wrapper img {
+  width: 100%;
+  height: auto;
+  margin-left: 7px;
+  
+}
+
+.social-wrapper {
+  display: flex; /* Make it a flex container */
+  flex-direction: row; /* Arrange children horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 5px; /* Adjust the gap between images */
     
-    <div class="background-but"></div>
-    <div class="background">
-        <div class="menu__wrapper">
-            <div class="menu__bar">
-                <div class="logo-wrapper">
-                    <a href="index.html"><img src="images/Logo.png" alt="Image 1"></a>
-                </div>
-                <img
-                    class="menu-icon"
-                    src="burger-menu.svg"
-                    title="Burger Menu"
-                    alt="Burger Menu"
-                    onclick="toggleMenu(this)"
-                    >
+}
 
+.social-wrapper img:hover {
+    transform: scale(1.1);
+}
 
-                <ul class="navigation">
-                    <li>
-                        <a href="https://www.youtube.com/watch?v=-50NdPawLVY" title="Games">Games</a>
-                    </li>
-                    <li>
-                        <a href="https://www.redbubble.com/people/RiceByte/explore?page=1&sortOrder=recent" title="Shop">Shop</a>
-                    </li>
-                    <li>
-                        <a href="news.html" title="News">News</a>
-                    </li>
-                    <li>
-                        <a href="https://www.redbubble.com/people/RiceByte/explore?page=1&sortOrder=recent" title="About">About</a>
-                    </li>
-                    <li>
-                        <a href="https://www.redbubble.com/people/RiceByte/explore?page=1&sortOrder=recent" title="Art">Art</a>
-                    </li>
+.social-wrapper img {
+  max-width: 30px; /* Limit the maximum width of the images */
+  height: auto;
+}
 
                     
+.navigation > li {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
 
-                </ul>
-                <div class="social-wrapper">
-                    <a href="https://youtube.com/@ricebytestudios?si=kQSjF2X-MU2OAHQI"><img src="images/YOUTLOGO.png" alt="Image 1"></a>   
-                    <a href="https://www.tiktok.com/@ricebyte"><img src="images/TIKTOKLOGO.png" alt="Image 1"></a>
-                    <a href="https://instagram.com/ricebytestudios?igshid=MzRlODBiNWFlZA=="><img src="images/INSTALOGO.png" alt="Image 1"></a>
-                    <a href="https://www.twitch.tv/NEVI_LIVE"><img src="images/TWITCHLOGOO.png" alt="Image 1"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+.navigation > li > a {
+    color: white;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+    background-image: linear-gradient(
+        to right,
+        var(--primary-hover),
+        var(--primary-hover) 50%,
+        white 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 3px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
 
-<div class="container">
-  <h2 class="title">Beta Test Coming Soon</h2>
-  <div class="line"></div>
-  <div class="content">
-    <div class="images">
-      <!-- Add your images here -->
-      <img src="images/Logo.png" alt="Image 1">
-      <!-- Add more images as needed -->
-    </div>
- <p>We have a new game in the works called Miyu's Wish. </p>
+.navigation > li > a:before {
+    content: '';
+    background: var(--primary-hover);
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.2s ease-in-out;
+}
+  
+.navigation > li > a:hover {
+    background-position: 0;
+}
+/*  hover effect inspired by 
+    https://codepen.io/team/css-tricks/pen/OJOXWPp
+*/
 
-     <p>This will be a Visual Novel game that will focus heavy on a small town with mystery and friendship.</p>
-     <p>Who are her friends, who will she meet, what will happen...</p>
-     
+.navigation > li > a:hover::before{
+    width: 100%;
+}
 
-  </div>
+@media (min-width: 600px) {
+    .menu-icon {
+        display: none;
+    }
+}
 
-  <h2 class="title">Welcome to RiceByte Studios</h2>
-  <div class="line"></div>
-  <div class="content">
-    <div class="images">
-      <!-- Add your images here -->
-      <img src="images/Logo.png" alt="Image 1">
-      <!-- Add more images as needed -->
-    </div>
- <p>Welcome to The RiceByte Studios Website. </p>
+@media (max-width: 600px) {
 
-    <p>This website was designed by the two co-founders, Nevin and Israel. </p>
-
-  </div>
-
-</div>
-
-
-
-
-
-
-
-    <script src="script.js"></script>
-
-
-
-
-
-
-
-    <footer class= "layered-background2">
-
-    <div class="reversed-diagonal-rectangle2 brown2"></div>
-    <div class="diagonal-rectangle2 gray2"></div>
-            <div class="footer-wrapper">
-                <section class="footer-top">
-                    <div class="footer-headline">
-                        <h2>Subscribe to our newsletter</h2>
-                        <p>
-                            Stay up to date with our news and articles
-                        </p>
-                    </div>
-                    <div class="footer-subscribe">
-                        <input type="email" spellcheck="false" placeholder="Your Email">
-                        <button>
-                            Sign Up
-                        </button>
-                    </div> 
-                </section>
-                <div class="footer-columns">
-                    <section>
-                        <h3>Product</h3>
-                        <ul>
-                            <li>
-                                <a href="#" title="API">API</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Pricing">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Documentation">Documentation</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Release Notes">Release Notes</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Status">Status</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>Resources</h3>
-                        <ul>
-                            <li>
-                                <a href="#" title="Support">Support</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Sitemap">Sitemap</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Newsletter">Newsletter</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Help Centre">Help Centre</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Investor">Investor</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>Company</h3>
-                        <ul>
-                            <li>
-                                <a href="#" title="About Us">About Us</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Blog">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Careers">Careers</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Press">Press</a>
-                            </li>
-                            <li>
-                                <a href="#" title="Contact">Contact</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>Legal</h3>
-                        <ul>
-                            <li>
-                                <a href="#" title="Terms and services">
-                                    Terms
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="Privacy Policy">
-                                    Privacy
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="Cookies">
-                                    Cookies
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="Licenses">
-                                    Licenses
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="Cookies">
-                                    Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
-                      <section class="footer-logo">
-
-                                <img src="images/bottomLogo.png" alt="Image 1">
-                       <h2>
-                    <!--        <svg width="1103" height="996" viewBox="0 0 1103 996" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M410.988 255.56L0 995.337H189.802L505.141 427.427L410.988 255.56ZM1102.94 995.337L647.119 170.373L551.471 0L457.317 170.373L551.471 340.746L711.79 629.718H498.683L405.461 786.972H799.034L914.634 995.337H1102.94Z" fill="#FAFBFC"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M410.988 255.56L0 995.337H189.802L505.141 427.427L410.988 255.56ZM1102.94 995.337L647.119 170.373L551.471 0L457.317 170.373L551.471 340.746L711.79 629.718H498.683L405.461 786.972H799.034L914.634 995.337H1102.94Z" fill="#FAFBFC"/>
-                            </svg>
-                        </h2>
-                -->
+    body {
+        margin-top: 0px; /* Adjust as needed */
+        padding: 0;
+    }
 
 
-                  </section>  
-                </div>
-                <div class="footer-bottom">
-                    <div class='social-links'>
-                        <ul>
-                            <li>
-                                <a href="https://www.tiktok.com/@ricebyte" title="TIKTOKLOGO">
-                                    <img src="images/TIKTOKLOGO.png" alt='Instagram'>                       
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://youtube.com/@ricebytestudios?si=kQSjF2X-MU2OAHQI" title="Youtube">
-                                    <img src="images/YOUTLOGO.png" alt='Youtube'>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://instagram.com/ricebytestudios?igshid=MzRlODBiNWFlZA==" title="Instgram">
-                                    <img src="images/INSTALOGO.png" alt='Instagram'>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitch.tv/NEVI_LIVE" title="Twitch">
-                                    <img src="images/TWITCHLOGOO.png" alt='Twitch'>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="GitHub">
-                                    <img src="assets/github.svg" alt='GitHub'>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <small>Life is Like an Onigiri... How it's Made is Up You</small>
-                </div>
-            </div>
 
-        </footer>
-            
-        <script>
-            document.getElementById("year").innerHTML = new Date().getFullYear();
-        </script>
+    
+    .navigation {
+        display: none;
+    }
+    .social-wrapper{
+        display: none;
+    }
 
-        <div class="bottom-bar">
- <small>© RiceByte Studios. <span id="year"></span>, All rights reserved</small>
-                </div>
+    .menu-icon {
+        display: block;
+    }
 
-</div>
 
-</body>
-</html>
+    .navigation--mobile {
+        top: var(--navbar-height);
+        position: absolute;
+        right: 0px;
+        display: flex;
+        padding: 80px 60px;
+        min-height: 100%;
+        background-color: var(--background);       
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        opacity: 0.95;
+        animation: fadein 0.3s forwards;
+    }
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+    }
+
+    .navigation--mobile--fadeout {
+        animation: fadeout 300ms forwards;
+    }
+
+    @keyframes fadeout {
+        0% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+        100% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+}
+
+
+
+
+.container {
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding around the container */
+  text-align: left; /* Center the text within the container */
+  background-color: #E8E4C9; /* Set your desired background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 5%;
+}
+
+.title {
+  font-size: 24px; /* Adjust the title font size */
+  font-weight: bold; /* Make the title bold */
+  margin-bottom: 10px; /* Add some spacing below the title */
+
+}
+
+.line {
+  border-top: 2px solid #333; /* Add a horizontal line under the title */
+  margin-bottom: 20px; /* Adjust the spacing between the title and content */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 100px;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the spacing between images */
+}
+
+.images img {
+  max-width: 100%; /* Ensure images don't exceed their container width */
+  height: auto; /* Maintain the image aspect ratio */
+  margin-bottom: 50px;
+}
+
+p {
+ font-size: 16px;
+            line-height: 1.5; /* Increase line height for better spacing between paragraphs */
+            text-align: left;
+            margin: 0 0 20px 0; /* Add margin to the bottom of each paragraph for spacing */
+}
+
+
+
+@media (max-width: 599px) {
+    .container {
+        margin-top: 11%;
+
+    }
+
+
+}
+
+
+
+
+
+
+:root {
+    --footer-background: #121a29;
+    --text-color: #FAFBFC;
+    --text-gray: #FEFEFE;
+    --text-primary: #FAFBFC;
+    --button-color: #404652;
+    --button-border: #6B707C;
+}
+
+
+
+/*? footer reset */
+*, *::after, *::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    background-color: #FAFBFC;
+}
+
+@media (max-width: 599px) {
+
+.footer-wrapper{
+    transform: translate(-10%,5%);
+}
+}
+
+
+
+.layered-background2 {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust total height as needed */
+  margin-bottom: 50px; /* Add space at the bottom */
+  overflow: hidden; /* Hide overflowing content */
+    transform: translateY(20%); /* Center horizontally */
+
+}
+
+.diagonal-rectangle2,
+.reversed-diagonal-rectangle2 {
+  position: absolute;
+  width: 100%; /* Stretch to full width */
+  height: 100%; /* Stretch to full height */
+}
+
+.gray2 {
+  background-color: #BFB098; /* Blue color */
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);                 
+  z-index: -2; /* Place behind the reversed-diagonal-rectangle */
+}
+
+.brown2 {
+  background-color: black; /* Red color */
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+  z-index: -1
+}
+
+
+
+
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: transparent;
+    min-width: 300px;
+    width: 100vw;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 16px;
+   height:20%;
+    width: 70%; /* Add this line to stretch horizontally */
+    margin-top: 80px; /* Adjust the margin-top value as needed */
+
+}
+
+
+/*? top section */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    padding: 16px 0px;
+    justify-content: space-between;
+}
+
+.footer-line {
+    display: block;
+    width: 100%;
+    height: 8px;
+}
+
+/*? footer subscribe */
+.footer-subscribe {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-subscribe > input {
+    border: 1px solid var(--button-border);
+    color: var(--text-color);
+    outline: none;
+    min-height: 36px;
+    background-color: var(--footer-background);
+    font-size: 1.2rem;
+    flex: 1 0 120px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.footer-subscribe > input::placeholder {
+    color: var(--text-color);
+}
+
+.footer-subscribe > button {
+    cursor: pointer;
+    background-color: var(--button-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.25rem;
+    min-width: 120px;
+    min-height: 36px;
+    flex: 1 0 80px;
+    white-space: nowrap;
+    padding: 8px 12px;
+    border: 0px;
+    outline: none;
+    border: 1px solid var(--button-border);
+}
+
+/*? footer columns */
+.footer-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    flex: 2 0 140px;
+    width: 100%;
+    gap: 16px;
+    padding: 24px 8px 16px 8px;
+    margin: 0 auto;
+}
+
+.footer-columns ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-columns ul a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-columns ul a:hover{
+    text-decoration: underline;
+}
+
+.footer-columns ul li {
+    margin-bottom: 16px;
+}
+
+.footer-columns h3 {
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.125rem;
+}
+
+.footer-centering {
+    margin: 0 auto;
+}
+
+.footer-columns > section {
+    min-width: 150px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: 16px;
+    color: var(--text-color);
+    margin-bottom: 60px;
+    transform: translateX(70%);
+}
+/*
+.footer-logo svg {
+    stroke: var(--text-color);
+    stroke-width: 8px;
+    width: 50px;
+    height: 50px;
+}*/
+
+.footer-logo {
+  position: relative;
+  max-width: 35%; /* Adjust the maximum width of the image */
+  max-height: 35%; /* Adjust the maximum height of the image */
+
+}
+
+.footer-logo img{
+  width: 100%; /* Make the image take up 100% of the container's width */
+  height: auto; /* Allow the image to maintain its aspect ratio */
+  opacity: 0.4; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
+
+}
+
+
+/*? Footer bottom */
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 48px; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    padding: 16px 0px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: var(--text-gray);
+}
+
+.footer-bottom > small {
+    font-size: 16px;
+    margin: 0 4px;
+}
+
+.footer-headline > h2 {
+    margin: 0px;
+    color: var(--text-primary);
+}
+
+.footer-headline > p {
+    color: var(--text-gray);
+    margin: 4px 0px 20px 0px;
+}
+
+.footer-line {
+    display: block;
+    min-width: 40px;
+    height: 2px;
+    background-color: var(--text-gray);
+}
+
+/*? socials */
+
+.social-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.social-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.social-links ul {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+}
+
+/*? mobile */
+
+@media (max-width: 800px) {
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px 8px 32px 8px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: space-between;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 599px) {
+.layered-background2{
+    transform: translateY(40%);
+max-height: 100%;
+
+ max-width: 100%;
+
+
+
+}
+.footer-logo img{
+display: none;
+
+}
+.footer-subscribe input{
+    width:40%;
+}
+
+.footer-wrapper{
+    transform: translate(0%,10%);
+
+}
+.footer-subscribe{
+    font-size:50%;
+
+
+}
+.footer-columns{
+    font-size:60%;
+    width:200%;
+
+}
+.footer-bottom{
+margin-bottom: 50%;
+
+}
+
+    }
+
+
+
+
+
+
+
+/* Add this CSS to style the bottom bar */
+.bottom-bar {
+  position: relative; /* Use fixed positioning */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #485253; /* Choose your desired background color */
+  color: #fff; /* Choose your desired text color */
+  text-align: center;
+  padding: 10px 0; /* Adjust padding as needed */
+  z-index: 1000; /* Adjust the z-index to ensure it's on top of other content */
+
+}
+
+@media (max-width: 599px) {
+.bottom-bar{
+    transform: translateY(800%);
+}
+
+    }
+
+
+
+.bottom-bar{
+    transform: translateY(180%);
+}
+
+
+}
