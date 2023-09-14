@@ -276,7 +276,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: left;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .images {
@@ -292,14 +292,22 @@ body {
 }
 
 p {
-  font-size: 16px; /* Adjust the paragraph font size */
-  line-height: 3; /* Adjust the line height for better readability */
-  text-align: left; /* Left-align the paragraph text */
+ font-size: 16px;
+            line-height: 1.5; /* Increase line height for better spacing between paragraphs */
+            text-align: left;
+            margin: 0 0 20px 0; /* Add margin to the bottom of each paragraph for spacing */
 }
 
 
 
+@media (max-width: 599px) {
+    .container {
+        margin-top: 11%;
 
+    }
+
+
+}
 
 
 
