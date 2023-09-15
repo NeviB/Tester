@@ -36,9 +36,8 @@ body {
     left: 0;
     width: 100%;
     height: calc(100vh - var(--navbar-height)); /* Calculate the height minus the menu__bar height */
-    background-image: url(background.jpg);
-    background-repeat: repeat /* Will be taken out, testing */
-    background-color: #E8E4C9; /* Set your desired background color */
+   /*  background-image: url(background.jpg);*/
+    background-color: #FFFDD0; /* Set your desired background color */
     z-index: -2; /* Place it behind other elements */
 }
 
@@ -67,7 +66,7 @@ body {
     background-color: var(--background);
     height: 60px;
     opacity: 0.9;
-        z-index: 1000; /* Add a high z-index to keep it on top */
+     z-index: 1000; /* Add a high z-index to keep it on top */
 
 }
 
@@ -253,19 +252,17 @@ body {
 
 
 
-/* Default styles for larger screens */
 
-
-/* Default styles for larger screens */
+/*
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 150px; /* Adjust the gap as needed */
-    justify-content: center; /* Center the cards horizontally */
-    align-items: center; /* Center the cards vertically */
-    max-width: 60%; /* Prevent horizontal overflow */
-    margin: 0 auto; /* Center the gallery horizontally */
-    padding: 20px; /* Add padding as needed */
+    gap: 150px; /* Adjust the gap as needed 
+    justify-content: center;  Center the cards horizontally 
+    align-items: center; Center the cards vertically 
+    max-width: 60%;  Prevent horizontal overflow 
+    margin: 0 auto;  Center the gallery horizontally 
+    padding: 20px;  Add padding as needed 
      z-index: -3;
     margin-top: 75%;
 
@@ -275,16 +272,16 @@ body {
 
 
 .card {
-    /* Adjust the width and height properties to control the card size */
-    width: calc(25% - 20px); /* Adjust the width and gap as needed */
-    min-width: 20%; /* Minimum card width */
+     Adjust the width and height properties to control the card size 
+    width: calc(25% - 20px); /Adjust the width and gap as needed 
+    min-width: 20%; /Minimum card width 
     border-radius: 16px;
     transition: 1000ms all;
     transform-origin: center left;
-    display: flex; /* Add flex display to center the image */
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    /* Add any other card styles you need */
+    display: flex;  Add flex display to center the image 
+    justify-content: center;  Center the content horizontally 
+    align-items: center; Center the content vertically 
+     Add any other card styles you need 
     margin-bottom: 100px;
 
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -292,10 +289,10 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
-    /* Reduce the size of the image */
-    max-width: 80%; /* Set an upper limit for the image width */
-    height: auto; /* Allow the height to adjust proportionally */
-    max-height: 100%; /* Limit the image height to match the card's height */
+     Reduce the size of the image 
+    max-width: 80%; /* Set an upper limit for the image width 
+    height: auto;  Allow the height to adjust proportionally 
+    max-height: 100%;  Limit the image height to match the card's height 
     object-fit: cover;
     border-radius: 8px;
     transform: translateX(13%);
@@ -311,39 +308,40 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 .card:hover {
     cursor: pointer;
-    transform: scale(1.15); /* Add the transform property back for hover effect */
+    transform: scale(1.15);  Add the transform property back for hover effect 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 
 
-/* CSS for smaller screens (adjust the max-width and gap as needed) */
+
+ CSS for smaller screens (adjust the max-width and gap as needed) 
 @media (max-width: 600px) {
     .gallery {
-        transform: translate(-2%,10%); /* Center horizontally */
-        gap: 20px; /* Adjust the gap as needed */
+        transform: translate(-2%,10%);  Center horizontally 
+        gap: 20px;  Adjust the gap as needed 
     }
 }
 
 @media (max-width: 599px) {
     .gallery .card {
-        width: calc(50% - 20px); /* Adjust the width and gap for smaller screens */
-        min-width: 275px; /* Minimum card width */
-        height: 400px; /* Adjust the height as needed */
-        /* Add any other styles you want for 390px screens */
+        width: calc(50% - 20px);  Adjust the width and gap for smaller screens 
+        min-width: 275px;  Minimum card width 
+        height: 400px;  Adjust the height as needed 
+         Add any other styles you want for 390px screens 
         margin-top: 75%;
     }
 
     .gallery .card img {
-        max-width: 100%; /* Adjust the maximum image width for 390px screens */
-        /* Adjust other image styles as needed */
+        max-width: 100%; /* Adjust the maximum image width for 390px screens 
+        /Adjust other image styles as needed 
         transform: translateX(-2%);
     }
 
     .card h3 {
         font-size: 160%;
         text-align: center;
-        transform: translate(0%,-30%); /* Center horizontally */
+        transform: translate(0%,-30%);  Center horizontally 
     }
 
 }
@@ -353,6 +351,87 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transform: translateX(-10%);
     }
 }
+
+*/
+
+
+
+
+
+.gallery {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 50vh; /* Full viewport height */
+     margin: 0 auto; /* Center the container horizontally */
+
+    
+}
+
+/* Profile card */
+.card {
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 5%; /* Add margin to separate profiles */
+    margin-top: 70% ;
+     transition: 1000ms all;
+    transform-origin: center left;
+}
+
+/* Profile picture */
+.card-picture {
+    width: 75%; /* Adjust the picture size */
+    height: auto; /* Adjust the picture size */
+
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Spacing below the picture */
+    justify-content: center; /* Center horizontally */
+}
+/* Job title */
+.card-title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+}
+
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.15);  Add the transform property back for hover effect 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    
+}
+
+
+
+
+
+@media (max-width: 599px) {
+    .gallery {
+        width:80%;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text within each card */
+       transform:translateY(75%);
+
+    }
+
+    /* Reset margin and padding for profile cards */
+    .card {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Adjust spacing between profile cards */
+    .card:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
 
 
 
@@ -451,7 +530,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 
 
-/* -=-=-=-=-=-=-=-=- Coming Soon Title -=-=-=-=-=-=-=-=- */
+/* -=-=-=-=-=-=-=-=- Coming Soon Title -=-=-=-=-=-=-=-=- 
 .coming-image-container {
   position: relative;
   text-align: center;
@@ -459,7 +538,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .image-soon-title {
   position: absolute;
-  top: 100px; /* Adjust this value */
+  top: 100px;  Adjust this value 
   left: 1%;
   width: 100%;
   padding: 10px;
@@ -467,45 +546,41 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
   z-index: 1;
 }
-/* -=-=-=-=-=-=-=-=- Coming Soon Title -=-=-=-=-=-=-=-=- */
 
-
-
-/* -=-=-=-=-=-=-=-=- Coming Soon Image -=-=-=-=-=-=-=-=- */
 
 .coming-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150vh; /* Set the container to full viewport height */
-  opacity: 0.2; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
-  margin-bottom: 50px; /* Add margin to create space under the container */
-  transform: translateY(10%); /* Center horizontally */
+  height: 150vh;  Set the container to full viewport height 
+  opacity: 0.2; /* Adjust this value to control the transparency (0.4 means 40% opacity) 
+  margin-bottom: 50px; /* Add margin to create space under the container 
+  transform: translateY(10%); /* Center horizontally 
 }
 
 .coming-container img {
-  max-width: 70%; /* Ensure the image doesn't exceed the container's width */
-  max-height: 70%; /* Ensure the image doesn't exceed the container's height */
-  width: auto; /* Maintain the aspect ratio */
-  height: auto; /* Maintain the aspect ratio */
-  margin-top: 150px; /* Adjust this value to move the image higher */
+  max-width: 70%; Ensure the image doesn't exceed the container's width 
+  max-height: 70%;  Ensure the image doesn't exceed the container's height 
+  width: auto; /* Maintain the aspect ratio 
+  height: auto; /* Maintain the aspect ratio 
+  margin-top: 150px;  Adjust this value to move the image higher 
 }
 
-/* -=-=-=-=-=-=-=-=- ComingSoon Image -=-=-=-=-=-=-=-=- */
+ -=-=-=-=-=-=-=-=- ComingSoon Image -=-=-=-=-=-=-=-=- 
 
-/* -=-=-=-=-=-=-=-=- future Button -=-=-=-=-=-=-=-=- */
+ -=-=-=-=-=-=-=-=- future Button -=-=-=-=-=-=-=-=- 
 .Button-soon {
   background-color: #485253;
-  color: #FFFFFF; /* Correct the color value */
+  color: #FFFFFF;  Correct the color value 
   border: none;
   text-align: center;
   padding: 10px 20px;
-  position: absolute; /* Position the button absolutely */
-  bottom: 400px; /* Adjust the vertical position */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
+  position: absolute; /* Position the button absolutely 
+  bottom: 400px;  Adjust the vertical position 
+  left: 50%;  Center horizontally 
+  transform: translateX(-50%);  Center horizontally 
   font-family: 'Mochiy Pop P One', sans-serif;
-   z-index: 1; /* Place the rectangle on top of other elements */
+   z-index: 1;  Place the rectangle on top of other elements 
 }
 
 .rounded-corners {
@@ -515,20 +590,20 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 @media (max-width: 601px) {
   .coming-container {
-    height: 100vh; /* Set a different height for mobile screens */
-    margin-bottom: 20px; /* Adjust margin for mobile screens */
+    height: 100vh;  Set a different height for mobile screens 
+    margin-bottom: 20px;  Adjust margin for mobile screens 
   }
 
   .coming-container img {
-    max-width: 80%; /* Adjust the maximum width for mobile screens */
-    max-height: 80%; /* Adjust the maximum height for mobile screens */
-    margin-top: 50px; /* Adjust the margin for mobile screens */
+    max-width: 80%;  Adjust the maximum width for mobile screens 
+    max-height: 80%;  Adjust the maximum height for mobile screens 
+    margin-top: 50px;  Adjust the margin for mobile screens 
   }
 
 
   .Button-soon {
 padding: 5px 10px;
-bottom: 250px; /* Adjust the vertical position for mobile screens */
+bottom: 250px;  Adjust the vertical position for mobile screens 
 font-size: 10px;
     }
 }
@@ -540,30 +615,107 @@ font-size: 10px;
 
 @media (max-width: 599px) {
   .coming-container {
-    height: 100vh; /* Set a different height for mobile screens */
-    margin-bottom: 20px; /* Adjust margin for mobile screens */
+    height: 100vh;  Set a different height for mobile screens 
+    margin-bottom: 20px;  Adjust margin for mobile screens 
     transform: translateY(50%);
   }
 
   .coming-container img {
-    max-width: 100%; /* Adjust the maximum width for mobile screens */
-    max-height: 100%; /* Adjust the maximum height for mobile screens */
+    max-width: 100%;  Adjust the maximum width for mobile screens 
+    max-height: 100%;  Adjust the maximum height for mobile screens 
     height: 50%;
-    margin-top: 50px; /* Adjust the margin for mobile screens */
+    margin-top: 50px; /Adjust the margin for mobile screens 
   }
 
 
   .Button-soon {
 padding: 5px 10px;
-bottom: 125px; /* Adjust the vertical position for mobile */
+bottom: 125px;  Adjust the vertical position for mobile 
 font-size: 10px;
 transform: translate(-50%, -600%);
     }
 
       body {
-    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-x: hidden; Hide horizontal overflow 
   }
 }
+
+*/
+
+
+
+
+.coming-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 80vh; /* Increase the height to 80% of the viewport height */
+    margin: 0 auto; /* Center the container horizontally */
+
+    opacity: 0.2; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
+}
+/* Profile card */
+.coming-content {
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 5%; /* Add margin to separate profiles */
+    margin-top: 45% ;
+     transition: 1000ms all;
+    transform-origin: center left;
+    opacity: 0.2; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
+}
+
+/* Profile picture */
+.coming-image {
+    width: 100%; /* Adjust the picture size */
+    height: auto; /* Adjust the picture size */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 40px; /* Spacing below the picture */
+    justify-content: center; /* Center horizontally */
+}
+/* Job title */
+.coming-title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+}
+
+
+.Button-soon {
+    background-color: #485253;
+    color: #FFFFFF; /* Correct the color value */
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    z-index: 1;
+    position: relative; /* Add relative positioning */
+   justify-content: center; /* Center horizontally */
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}
+
+@media (max-width: 599px) {
+  .coming-content {
+   
+    transform: translateY(175%);
+  }
+
+
+  .Button-soon {
+
+    padding: 10px 20px;
+
+    }
+
+}
+
+
+
+
 
 
 /* -=-=-=-=-=-=-=-=- ComingSoon Image -=-=-=-=-=-=-=-=- */
@@ -621,54 +773,22 @@ transform: translate(-50%, -600%);
 
 
 
-/*-=-=-=-=-=-=-=-=- News Rectangle Background -=-=-=-=-=-=-=-=-*/
-.layered-background {
-  position: relative;
-  width: 100%;
-  height: 820px; /* Adjust total height as needed */
-  margin-bottom: 50px; /* Add space at the bottom */
-  overflow: hidden; /* Hide overflowing content */
-    transform: translateY(75%); /* Center horizontally */
 
-}
 
-.diagonal-rectangle,
-.reversed-diagonal-rectangle {
-  position: absolute;
-  width: 100%; /* Stretch to full width */
-  height: 100%; /* Stretch to full height */
-}
-
-.gray {
-  background-color: #485253; /* Blue color */
-  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);                 
-  z-index: -1; /* Place behind the reversed-diagonal-rectangle */
-}
-
-.brown {
-  background-color: #BFB098; /* Red color */
-  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
-}
-
+/*
 
 .image-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
-  max-height: 80vh; /* Set the maximum height for the image */
+    max-width: 100%; 
+  max-height: 80vh; 
   width: auto;
   height: auto;
 }
-/*-=-=-=-=-=-=-=-=- News Rectangle Background -=-=-=-=-=-=-=-=-*/
 
 
-
-
-/* -=-=-=-=-=-=-=-=- News Image -=-=-=-=-=-=-=-=- */
-
-/* Style for the image container */
 .image-container {
   display: flex;
   flex-wrap: wrap;
@@ -678,19 +798,20 @@ transform: translate(-50%, -600%);
   max-width: 100%;
   margin: 20px auto 0;
 
-  position: relative; /* Change position to relative to contain absolute children */
+  position: relative; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the image */
+
 .image-container img {
-    width: 40%; /* Remove max-width and use auto */
+    width: 40%; 
   height: auto;
   max-height: 100%;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
   margin-top:-20px;
-    pointer-events: none; /* Disable pointer events on the image itself */
+    pointer-events: none; 
 }
 
 .image-container:hover img {
@@ -699,79 +820,73 @@ transform: translate(-50%, -600%);
 
 @keyframes spinGrow {
     0% {
-        transform: scale(0.2) rotate(0deg); /* Start very small and not rotated */
+        transform: scale(0.2) rotate(0deg); 
     }
     50% {
-        transform: scale(1.2) rotate(360deg); /* Spin while growing */
+        transform: scale(1.2) rotate(360deg); 
     }
     100% {
-        transform: scale(1) rotate(360deg); /* Return to normal size */
+        transform: scale(1) rotate(360deg); 
     }
 }
-/* -=-=-=-=-=-=-=-=- News Image -=-=-=-=-=-=-=-=- */
 
-
-/* -=-=-=-=-=-=-=-=- News Button -=-=-=-=-=-=-=-=- */
 .Button {
   background-color: #485253;
-  color: #FFFFFF; /* Correct the color value */
+  color: #FFFFFF; 
   border: none;
   text-align: center;
   padding: 10px 20px;
-  position: absolute; /* Position the button absolutely */
-  bottom: -100px; /* Adjust the vertical position */
-  left: 54%; /* Center horizontally */
-  transform: translateX(-70%); /* Center horizontally */
+  position: absolute; 
+  bottom: -100px; 
+  left: 54%; 
+  transform: translateX(-70%); 
   font-family: 'Mochiy Pop P One', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth color change */
+    transition: background-color 0.3s ease, color 0.3s ease; 
     z-index: 7;
 }
 
 .Button:hover {
-  background-color: #FFFFFF; /* Change the background color */
-  color: #485253; /* Change the text color */
+  background-color: #FFFFFF; 
+  color: #485253; 
 }
 
 .rounded-corners {
   border-radius: 25px;
 }
-/* -=-=-=-=-=-=-=-=- News Button -=-=-=-=-=-=-=-=- */
 
-
-/* -=-=-=-=-=-=-=-=- News Title -=-=-=-=-=-=-=-=- */
 
 .image-container h3 {
-  font-size: 42%; /* Set the font size for the title */
-  color: #333; /* Set the text color */
-  margin: 0; /* Remove any default margin */
-  font-weight: bold; /* Make it bold */
+  font-size: 42%; 
+  color: #333; 
+  margin: 0; 
+  font-weight: bold; /
   
-  /* Adjust the title's vertical position */
-  position: absolute; /* Position it absolutely */
-  top: -70px; /* Adjust the vertical position from the top */
-  left: 53%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
+
+  position: absolute; /
+  top: -70px; 
+  left: 53%; 
+  transform: translateX(-50%); 
 }
 
 
 
-/* Mobile styles */
+
 @media (max-width: 599px) {
     .layered-background{
         max-height: 60vh;
         transform: translateY(100%);
     }
   .image-container {
-    text-align: center; /* Center content horizontally for mobile */
+    text-align: center; 
   }
 
   .image-container img {
-    width: 95%; /* Reduce the maximum image width for mobile */
+    width: 95%; 
   }
 
-/* Center title and button both horizontally and vertically for mobile */
+
 .image-container h3 {
-  font-size: 125%; /* Smaller font size for mobile screens */
+  font-size: 125%; 
 
    
 }
@@ -797,100 +912,224 @@ transform: translate(-56%,-200%);
 @media (min-width: 1440px) {
 
       .image-container {
-    transform: translate(-52%, -55%); /* Center horizontally */
+    transform: translate(-52%, -55%); 
 
   }
 
-  /* Adjust title and button positions for screens with a width of 1440px */
+
   .image-container h3 {
-    font-size: 250%; /* Larger font size for screens with a width of 1440px */
-    top: -90px; /* Adjust the vertical position for the title */
-    left: 53%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
+    font-size: 250%;
+    top: -90px; 
+    left: 53%; 
+    transform: translateX(-50%); 
   }
 
   .Button {
-    transform: translate(-75%, -150%); /* Center horizontally */
+    transform: translate(-75%, -150%); 
   }
     .layered-background {
-    height: 90vh; /* Increase the height for screens with a width of 1440px */
+    height: 90vh;
   }
   }
 
+*/
 
 
 
 
-/* -=-=-=-=-=-=-=-=- News Title -=-=-=-=-=-=-=-=- */
+
+/*-=-=-=-=-=-=-=-=- News Rectangle Background -=-=-=-=-=-=-=-=-*/
+.layered-background {
+   display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 80vh; /* Increase the height to 80% of the viewport height */
+    margin: 0 auto; /* Center the container horizontally */
+    
+    
+
+}
+
+.diagonal-rectangle,
+.reversed-diagonal-rectangle {
+  position: absolute;
+  width: 100%; /* Stretch to full width */
+  height: 100%; /* Stretch to full height */
+}
+
+.gray {
+  background-color: #485253; /* Blue color */
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);                 
+  z-index: -1; /* Place behind the reversed-diagonal-rectangle */
+}
+
+.brown {
+  background-color: #BFB098; /* Red color */
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+}
+
+/* Profile card */
+.image-container {
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 5%; /* Add margin to separate profiles */
+    margin-top: 70%;
+    transition: 1000ms all;
+    transform-origin: center left;
+    position: relative; /* Add relative positioning */
+    transform: translateY(-90%);
+
+}
 
 
 
-/*-=-=-=-=-=-=-=-=- MEET THE TEAM Image -=-=-=-=-=-=-=-=-*/
+
+/* Profile picture */
+.news-image {
+    width: 50%; /* Adjust the picture size */
+    height: auto; /* Adjust the picture size */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 40px; /* Spacing below the picture */
+    justify-content: center; /* Center horizontally */
+}
+/* Job title */
+.news-title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+    pointer-events: none; 
+}
+
+.image-container:hover img {
+  animation: spinGrow 1s linear forwards;
+}
+
+@keyframes spinGrow {
+    0% {
+        transform: scale(0.2) rotate(0deg); 
+    }
+    50% {
+        transform: scale(1.2) rotate(360deg); 
+    }
+    100% {
+        transform: scale(1) rotate(360deg); 
+    }
+}
+
+
+.Button {
+    background-color: #485253;
+    color: #FFFFFF; /* Correct the color value */
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    z-index: 1;
+    position: relative; /* Add relative positioning */
+   justify-content: center; /* Center horizontally */
+}
+
+.Button:hover {
+  background-color: #FFFFFF; 
+  color: #485253; 
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}
 
 
 
-/* Existing CSS code */
 
+@media (max-width: 599px) {
+    .layered-background{
+        max-height: 20vh;
+        transform: translateY(100%);
+    }
+  .image-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text within each card */
+     
+      transform: translateY(-40%);; 
+  }
+  .news-image{
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .team-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Decreased the gap for smaller screens */
-    justify-content: center; /* Center the cards horizontally */
-    align-items: center; /* Center the cards vertically */
-    max-width: 100%; /* Prevent horizontal overflow */
-    margin: 20px auto 0; /* Center the gallery horizontally and add some top margin */
-    padding: 10px; /* Reduced padding for smaller screens */
-    transform: translate(-5%,250%); /* Center horizontally */
+    gap: 20px; 
+    justify-content: center; 
+    align-items: center; 
+    max-width: 100%; 
+    margin: 20px auto 0;
+    padding: 10px; 
+    transform: translate(-5%,250%);
 }
 
 .team {
-    /* Adjust the width and height properties to control the card size */
-    width: calc(50% - 20px); /* Adjust the width and gap as needed for smaller screens */
-    min-width: 150px; /* Minimum card width */
-    height: auto; /* Allow height to adjust */
+    
+    width: calc(50% - 20px); 
+    min-width: 150px; 
+    height: auto; 
     border-radius: 16px;
     transition: 1000ms all;
     transform-origin: center left;
-    display: flex; /* Add flex display to center the image */
-    flex-direction: column; /* Stack image and text vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    /* Add any other card styles you need */
-    margin-bottom: 20px; /* Increased margin for spacing on smaller screens */
-    margin-left:235px; /* Remove the left margin to center the text */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+
+    margin-bottom: 20px; 
+    margin-left:235px;
 
 
 }
 
 .team img {
-    /* Make the image responsive to screen width */
-    max-width: 100%; /* Reduce the maximum image width for mobile */
-    height: auto; /* Allow the height to adjust proportionally */
-    max-height: 100%; /* Limit the image height to match the card's height */
+  
+    max-width: 100%; 
+    height: auto; 
+    max-height: 100%; 
     object-fit: cover;
     border-radius: 8px;
 
 }
 
 .team h3 {
-    font-size: 300%; /* Smaller font size for mobile screens */
+    font-size: 300%; 
     transform: translate(24%,-100%);
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Add an ellipsis (...) if text overflows the container */
+    text-overflow: ellipsis;
 }
 
-/* Existing CSS code */
 
-
-
-/*-=-=-=-=-=-=-=-=- MEET THE TEAM Image -=-=-=-=-=-=-=-=-*/
 
 
 .team img:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
+   
     animation: shake 0.5s;
-    /* When the animation is finished, start again */
+
     animation-iteration-count: infinite;
 }
 
@@ -909,30 +1148,30 @@ transform: translate(-56%,-200%);
 }
 
 
-/* CSS for smaller screens (adjust the max-width and gap as needed) */
+
 @media (max-width: 599px) {
     .team-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px; /* Decreased the gap for smaller screens */
-        justify-content: center; /* Center the cards horizontally */
-        align-items: center; /* Center the cards vertically */
-        max-width: 100%; /* Prevent horizontal overflow */
-        margin: 20px auto; /* Center the gallery horizontally and add some top margin */
-        padding: 10px; /* Reduced padding for smaller screens */
+        gap: 20px; 
+        justify-content: center; 
+        align-items: center; 
+        max-width: 100%; 
+        margin: 20px auto; 
+        padding: 10px;
         margin-left: 10%;
         transform: translate(-60%, 300%);
     }
 
 
     .team img {
-        max-width: 200%; /* Reduce the maximum image width for mobile */
+        max-width: 200%; 
         
     }
 
     .team h3 {
         text-align: center;
-        font-size: 18px; /* Smaller font size for mobile screens */
+        font-size: 18px; 
         transform: translateX(45%);
     }
   
@@ -945,6 +1184,74 @@ transform: translate(-56%,-200%);
     }
 
 }
+
+
+
+*/
+
+
+
+/* Profile card */
+.team {
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 5%; /* Add margin to separate profiles */
+    margin-top: 45% ;
+     transition: 1000ms all;
+    transform-origin: center left;
+
+
+}
+
+/* Profile picture */
+.team-image {
+    width: 75%; /* Adjust the picture size */
+    height: auto; /* Adjust the picture size */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 40px; /* Spacing below the picture */
+    justify-content: center; /* Center horizontally */
+}
+/* Job title */
+.team-title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+}
+.team-image:hover {
+   
+    animation: shake 0.5s;
+
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@media (max-width: 599px) {
+    .team {
+                flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text within each card */
+  transform: translateY(300%);
+margin-bottom: 75%;
+
+    }
+}
+
+
+
 
 
 
@@ -1023,7 +1330,7 @@ footer {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 60%;
+    margin-top: 5%;
 
 }
 
@@ -1036,7 +1343,7 @@ footer {
     padding: 16px;
    height:20%;
     width: 70%; /* Add this line to stretch horizontally */
-    margin-top: 80px; /* Adjust the margin-top value as needed */
+    margin-top: 90px; /* Adjust the margin-top value as needed */
 
 }
 
@@ -1320,6 +1627,7 @@ margin-bottom: 50%;
   color: #fff; /* Choose your desired text color */
   text-align: center;
   padding: 10px 0; /* Adjust padding as needed */
-  z-index: 1000; /* Adjust the z-index to ensure it's on top of other content */
+  z-index: 1001; /* Adjust the z-index to ensure it's on top of other content */
+
 }
 
