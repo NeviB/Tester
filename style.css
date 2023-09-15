@@ -700,7 +700,8 @@ transform: translate(-50%, -600%);
 
 @media (max-width: 599px) {
   .coming-content {
-   
+       margin-top: 100%; /* Spacing below the picture */
+   margin-bottom: 70%; /* Spacing below the picture */
     transform: translateY(175%);
   }
 
