@@ -1612,9 +1612,12 @@ margin-bottom: 50%;
 
     }
 
+@media screen and (min-width: 2500px) {
+.footer-wrapper{
+    transform: translate(0%,10%);
 
-
-
+}
+}
 
 
 
