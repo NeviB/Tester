@@ -1,0 +1,804 @@
+:root {
+    --primary: #DAD2C2; ;
+    --primary-hover: #BFB098;                
+    --background: #485253;
+     --navbar-height: 60px;
+}
+
+:root {
+    --backgroundgal: #3C343D;
+    --backgroundgal-border: #6B626C;
+}
+
+
+
+body {
+    overflow-x: hidden; /* Lock horizontal scrolling */
+    box-sizing: border-box;
+      background-color: #FFF9DB !important;  /* Set the background color to #FFFCE2 */
+    background-repeat: no-repeat;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+  
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mochiy Pop P One';
+    font-weight: bold;
+}
+
+/* Add this CSS for the background under everything */
+.background-but{
+    position: absolute;
+    top: var(--navbar-height); /* Adjust for the height of your menu__bar */
+    left: 0;
+    width: 100%;
+    height: 250vh;
+    background-image: url('images/BG10.png');
+    background-color: #FFFDD0; /* Set your desired background color */
+    z-index: -2; /* Place it behind other elements */
+}
+
+
+
+.menu__wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    z-index: 2;  
+}
+
+.menu__bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 24px;
+    gap: 32px;
+    background-color: var(--background);
+    height: 60px;
+    opacity: 0.9;
+        z-index: 1000; /* Add a high z-index to keep it on top */
+
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    height: 32px;
+    width: 32px;
+}
+
+.navigation {    
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    gap: 24px;
+    padding: 0px;
+    background-color: var(--background);
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
+
+.logo-wrapper img {
+  width: 100%;
+  height: auto;
+  margin-left: 7px;
+  
+}
+
+.social-wrapper {
+  display: flex; /* Make it a flex container */
+  flex-direction: row; /* Arrange children horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 5px; /* Adjust the gap between images */
+    
+}
+
+.social-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+.social-wrapper img {
+  max-width: 30px; /* Limit the maximum width of the images */
+  height: auto;
+}
+
+                    
+.navigation > li {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.navigation > li > a {
+    color: white;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+    background-image: linear-gradient(
+        to right,
+        var(--primary-hover),
+        var(--primary-hover) 50%,
+        white 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 3px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation > li > a:before {
+    content: '';
+    background: var(--primary-hover);
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.2s ease-in-out;
+}
+  
+.navigation > li > a:hover {
+    background-position: 0;
+}
+/*  hover effect inspired by 
+    https://codepen.io/team/css-tricks/pen/OJOXWPp
+*/
+
+.navigation > li > a:hover::before{
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        margin-top: 0px; /* Adjust as needed */
+        padding: 0;
+    }
+
+
+
+
+    
+    .navigation {
+        display: none;
+    }
+    .social-wrapper{
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+
+    .navigation--mobile {
+        top: var(--navbar-height);
+        position: absolute;
+        right: 0px;
+        display: flex;
+        padding: 80px 60px;
+        min-height: 100%;
+        background-color: var(--background);       
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        opacity: 0.95;
+        animation: fadein 0.3s forwards;
+    }
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+    }
+
+    .navigation--mobile--fadeout {
+        animation: fadeout 300ms forwards;
+    }
+
+    @keyframes fadeout {
+        0% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+        100% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+}
+
+.container {
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding around the container */
+  text-align: left; /* Center the text within the container */
+
+  margin-top: 5%;
+}
+
+.title {
+  font-size: 24px; /* Adjust the title font size */
+  font-weight: bold; /* Make the title bold */
+  margin-bottom: 10px; /* Add some spacing below the title */
+
+}
+
+.line {
+  border-top: 2px solid #333; /* Add a horizontal line under the title */
+  margin-bottom: 20px; /* Adjust the spacing between the title and content */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 100px;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the spacing between images */
+}
+
+.images img {
+  max-width: 100%; /* Ensure images don't exceed their container width */
+  height: auto; /* Maintain the image aspect ratio */
+  margin-bottom: 50px;
+}
+
+p {
+            font-size: 16px;
+            line-height: 2; /* Increase line height for better spacing between paragraphs */
+            text-align: left;
+            margin: 0 0 20px 0; /* Add margin to the bottom of each paragraph for spacing */
+            font-weight: normal;
+}
+
+@media (max-width: 599px) {
+    .container {
+    transform: translateY(10%);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* Profile container */
+.profile-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 20vh; /* Full viewport height */
+     margin: 0 auto; /* Center the container horizontally */
+     width: 30%; /* CHANGE THIS IF YOU AD MORE PEOPLE. THIS INCREASES THE CONTAINTER WIDTH */
+       
+}
+
+/* Profile card */
+.profile-card {
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 50px; /* Add margin to separate profiles */
+}
+
+/* Profile picture */
+.profile-picture {
+    width: 150px; /* Adjust the picture size */
+    height: 150px; /* Adjust the picture size */
+    border-radius: 50%; /* Make it a circle */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Spacing below the picture */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Name */
+.profile-name {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Line separator */
+.profile-line {
+    width: 100%; /* Adjust line length */
+    height: 2px; /* Line thickness */
+    background-color: black; /* Line color */
+    margin-bottom: 10px; /* Spacing below the line */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Job title */
+.profile-title {
+    font-size: 14px; /* Adjust font size */
+    font-weight: normal;
+    justify-content: center; /* Center horizontally */
+}
+
+.profile-socials {
+    display: flex;
+    gap: 8px;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+
+.profile-socials img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease-in-out;
+}
+
+.profile-socials img:hover {
+    transform: scale(1.1);
+}
+
+.profile-socials ul {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+}
+
+@media (max-width: 599px) {
+    .profile-container {
+        width:100%;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text within each card */
+            transform: translateY(20%);
+            background-color: #FFF9db; /* Set your desired background color */
+
+    }
+
+    /* Reset margin and padding for profile cards */
+    .profile-card {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Adjust spacing between profile cards */
+    .profile-card:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .profile-line {
+    width: 100%; /* Adjust line length */
+    justify-content: center; /* Center horizontally */
+
+    }
+}
+
+
+
+
+
+
+
+:root {
+    --footer-background: #121a29;
+    --text-color: #FAFBFC;
+    --text-gray: #FEFEFE;
+    --text-primary: #FAFBFC;
+    --button-color: #404652;
+    --button-border: #6B707C;
+}
+
+
+
+/*? footer reset */
+*, *::after, *::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    background-color: #FAFBFC;
+}
+
+@media (max-width: 599px) {
+
+.footer-wrapper{
+    transform: translate(-10%,5%);
+}
+}
+
+
+
+.layered-background2 {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust total height as needed */
+  margin-bottom: 50px; /* Add space at the bottom */
+  overflow: hidden; /* Hide overflowing content */
+    transform: translateY(20%); /* Center horizontally */
+
+}
+
+.diagonal-rectangle2,
+.reversed-diagonal-rectangle2 {
+  position: absolute;
+  width: 100%; /* Stretch to full width */
+  height: 100%; /* Stretch to full height */
+}
+
+.brown2 {
+  background-color: #BFB098; /* Light Brown color */
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);                 
+  z-index: -2; /* Place behind the reversed-diagonal-rectangle */
+}
+
+.light-black {
+  background-color: #141414; /* Light  Black color */
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+  z-index: -1
+}
+
+
+
+
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: transparent;
+    min-width: 300px;
+    width: 100vw;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 16px;
+   height:20%;
+    width: 70%; /* Add this line to stretch horizontally */
+    margin-top: 90px; /* Adjust the margin-top value as needed */
+
+}
+
+
+/*? top section */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    padding: 16px 0px;
+    justify-content: space-between;
+}
+
+.footer-line {
+    display: block;
+    width: 100%;
+    height: 8px;
+}
+
+/*? footer subscribe */
+.footer-subscribe {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-subscribe > input {
+    border: 1px solid var(--button-border);
+    color: var(--text-color);
+    outline: none;
+    min-height: 36px;
+    background-color: var(--footer-background);
+    font-size: 1.2rem;
+    flex: 1 0 120px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.footer-subscribe > input::placeholder {
+    color: var(--text-color);
+}
+
+.footer-subscribe > button {
+    cursor: pointer;
+    background-color: var(--button-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.25rem;
+    min-width: 120px;
+    min-height: 36px;
+    flex: 1 0 80px;
+    white-space: nowrap;
+    padding: 8px 12px;
+    border: 0px;
+    outline: none;
+    border: 1px solid var(--button-border);
+}
+
+/*? footer columns */
+.footer-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    flex: 2 0 140px;
+    width: 100%;
+    gap: 16px;
+    padding: 24px 8px 16px 8px;
+    margin: 0 auto;
+}
+
+.footer-columns ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-columns ul a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-columns ul a:hover{
+    text-decoration: underline;
+}
+
+.footer-columns ul li {
+    margin-bottom: 16px;
+}
+
+.footer-columns h3 {
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.125rem;
+}
+
+.footer-centering {
+    margin: 0 auto;
+}
+
+.footer-columns > section {
+    min-width: 150px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: 16px;
+    color: var(--text-color);
+    margin-bottom: 60px;
+    transform: translateX(70%);
+}
+/*
+.footer-logo svg {
+    stroke: var(--text-color);
+    stroke-width: 8px;
+    width: 50px;
+    height: 50px;
+}*/
+
+.footer-logo {
+  position: relative;
+  max-width: 35%; /* Adjust the maximum width of the image */
+  max-height: 35%; /* Adjust the maximum height of the image */
+
+}
+
+.footer-logo img{
+  width: 100%; /* Make the image take up 100% of the container's width */
+  height: auto; /* Allow the image to maintain its aspect ratio */
+  opacity: 0.4; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
+
+}
+
+
+/*? Footer bottom */
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 48px; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    padding: 16px 0px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: var(--text-gray);
+}
+
+.footer-bottom > small {
+    font-size: 16px;
+    margin: 0 4px;
+}
+
+.footer-headline > h2 {
+    margin: 0px;
+    color: var(--text-primary);
+}
+
+.footer-headline > p {
+    color: var(--text-gray);
+    margin: 4px 0px 20px 0px;
+}
+
+.footer-line {
+    display: block;
+    min-width: 40px;
+    height: 2px;
+    background-color: var(--text-gray);
+}
+
+/*? socials */
+
+.social-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.social-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.social-links ul {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+}
+
+/*? mobile */
+
+@media (max-width: 800px) {
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px 8px 32px 8px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: space-between;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 599px) {
+.layered-background2{
+    transform: translateY(40%);
+max-height: 100%;
+
+ max-width: 100%;
+
+
+
+}
+.footer-logo img{
+display: none;
+
+}
+.footer-subscribe input{
+    width:40%;
+}
+
+.footer-wrapper{
+    transform: translate(0%,10%);
+
+}
+.footer-subscribe{
+    font-size:50%;
+
+
+}
+.footer-columns{
+    font-size:60%;
+    width:200%;
+
+}
+.footer-bottom{
+margin-bottom: 50%;
+
+}
+
+    }
+
+
+@media (min-width: 2500px) {
+
+.footer-wrapper{
+    transform: translate(0%,4%);
+    }
+}
+
+/* Add this CSS to style the bottom bar */
+.bottom-bar {
+  position: relative; /* Use fixed positioning */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #485253; /* Choose your desired background color */
+  color: #fff; /* Choose your desired text color */
+  text-align: center;
+  padding: 10px 0; /* Adjust padding as needed */
+  z-index: 1000; /* Adjust the z-index to ensure it's on top of other content */
+
+}
+
+
+
+
+
+
+
+

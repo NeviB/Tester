@@ -1,0 +1,1644 @@
+:root {
+    --primary: #DAD2C2; ;
+    --primary-hover: #BFB098;                
+    --background: #485253;
+     --navbar-height: 60px;
+}
+
+:root {
+    --backgroundgal: #3C343D;
+    --backgroundgal-border: #6B626C;
+}
+
+
+
+body {
+    overflow-x: hidden; /* Lock horizontal scrolling */
+    box-sizing: border-box;
+      background-color: #FFF9DB; /* Set the background color to #FFFCE2 */
+    /*  background-image: url('images/background2.jpg');
+    background-size: cover;*/
+    background-repeat: no-repeat;
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+  
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mochiy Pop P One';
+    font-weight: bold;
+}
+
+
+
+
+/* Add this CSS for the background under everything */
+.background-under {
+    position: absolute;
+    display: block;
+    top: var(--navbar-height); /* Adjust for the height of your menu__bar */
+    left: 0;
+    width: 100%;
+
+
+
+ background-color: #fff9db; /* Set the background color to #FFFCE2 */
+    z-index: -3; /* Place it behind other elements */
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+.menu__wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    z-index: 2;  
+}
+
+.menu__bar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 24px;
+    gap: 32px;
+    background-color: var(--background);
+    height: 60px;
+    opacity: 0.9;
+     z-index: 1000; /* Add a high z-index to keep it on top */
+
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    height: 32px;
+    width: 32px;
+}
+
+.navigation {    
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    gap: 24px;
+    padding: 0px;
+    background-color: var(--background);
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
+
+.logo-wrapper img {
+  width: 100%;
+  height: auto;
+  margin-left: 7px;
+  
+}
+
+.social-wrapper {
+  display: flex; /* Make it a flex container */
+  flex-direction: row; /* Arrange children horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 5px; /* Adjust the gap between images */
+    
+}
+
+.social-wrapper img:hover {
+    transform: scale(1.1);
+}
+
+.social-wrapper img {
+  max-width: 30px; /* Limit the maximum width of the images */
+  height: auto;
+
+}
+
+
+
+                    
+.navigation > li {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.navigation > li > a {
+    color: white;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+    background-image: linear-gradient(
+        to right,
+        var(--primary-hover),
+        var(--primary-hover) 50%,
+        white 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 3px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation > li > a:before {
+    content: '';
+    background: var(--primary-hover);
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all 0.2s ease-in-out;
+}
+  
+.navigation > li > a:hover {
+    background-position: 0;
+}
+/*  hover effect inspired by 
+    https://codepen.io/team/css-tricks/pen/OJOXWPp
+*/
+
+.navigation > li > a:hover::before{
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    body {
+        margin-top: 0px; /* Adjust as needed */
+        padding: 0;
+    }
+
+
+
+
+    
+    .navigation {
+        display: none;
+    }
+    .social-wrapper{
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+
+    .navigation--mobile {
+        top: var(--navbar-height);
+        position: absolute;
+        right: 0px;
+        display: flex;
+        padding: 80px 60px;
+        min-height: 100%;
+        background-color: var(--background);       
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        opacity: 0.95;
+        animation: fadein 0.3s forwards;
+    }
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        100% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+    }
+
+    .navigation--mobile--fadeout {
+        animation: fadeout 300ms forwards;
+    }
+
+    @keyframes fadeout {
+        0% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+        100% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+/*
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 150px; /* Adjust the gap as needed 
+    justify-content: center;  Center the cards horizontally 
+    align-items: center; Center the cards vertically 
+    max-width: 60%;  Prevent horizontal overflow 
+    margin: 0 auto;  Center the gallery horizontally 
+    padding: 20px;  Add padding as needed 
+     z-index: -3;
+    margin-top: 75%;
+
+}
+
+
+
+
+.card {
+     Adjust the width and height properties to control the card size 
+    width: calc(25% - 20px); /Adjust the width and gap as needed 
+    min-width: 20%; /Minimum card width 
+    border-radius: 16px;
+    transition: 1000ms all;
+    transform-origin: center left;
+    display: flex;  Add flex display to center the image 
+    justify-content: center;  Center the content horizontally 
+    align-items: center; Center the content vertically 
+     Add any other card styles you need 
+    margin-bottom: 100px;
+
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.card img {
+     Reduce the size of the image 
+    max-width: 80%; /* Set an upper limit for the image width 
+    height: auto;  Allow the height to adjust proportionally 
+    max-height: 100%;  Limit the image height to match the card's height 
+    object-fit: cover;
+    border-radius: 8px;
+    transform: translateX(13%);
+
+}
+
+.card h3 {
+    font-size: 200%;
+    margin-left: 0px;
+    transform: translateX(13%);
+}
+
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.15);  Add the transform property back for hover effect 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+ CSS for smaller screens (adjust the max-width and gap as needed) 
+@media (max-width: 600px) {
+    .gallery {
+        transform: translate(-2%,10%);  Center horizontally 
+        gap: 20px;  Adjust the gap as needed 
+    }
+}
+
+@media (max-width: 599px) {
+    .gallery .card {
+        width: calc(50% - 20px);  Adjust the width and gap for smaller screens 
+        min-width: 275px;  Minimum card width 
+        height: 400px;  Adjust the height as needed 
+         Add any other styles you want for 390px screens 
+        margin-top: 75%;
+    }
+
+    .gallery .card img {
+        max-width: 100%; /* Adjust the maximum image width for 390px screens 
+        /Adjust other image styles as needed 
+        transform: translateX(-2%);
+    }
+
+    .card h3 {
+        font-size: 160%;
+        text-align: center;
+        transform: translate(0%,-30%);  Center horizontally 
+    }
+
+}
+@media screen and (min-width: 2500px) {
+    .card h3 {
+        text-align: center;
+        transform: translateX(-10%);
+    }
+}
+
+*/
+
+
+
+
+
+.gallery {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 60vh; /* Full viewport height */
+     margin: 0 auto; /* Center the container horizontally */
+     z-index: 1;
+     margin-top: -10% ;
+}
+
+/* Profile card */
+.card {
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 5%; /* Add margin to separate profiles */
+    margin-top: 55% ;
+     transition: 1000ms all;
+    transform-origin: center left;
+}
+
+/* Profile picture */
+.card-picture {
+    width: 75%; /* Adjust the picture size */
+    height: auto; /* Adjust the picture size */
+
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Spacing below the picture */
+    justify-content: center; /* Center horizontally */
+}
+/* Job title */
+.card-title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+}
+
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.15);  Add the transform property back for hover effect 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    
+}
+
+
+
+
+
+@media (max-width: 599px) {
+    .gallery {
+        width:80%;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text within each card */
+       transform:translateY(60%);
+
+    }
+
+    /* Reset margin and padding for profile cards */
+    .card {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Adjust spacing between profile cards */
+    .card:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
+.edge--bottom {
+    position: absolute;
+    top: calc(var(--navbar-height) - 60px); /* Move it 20px higher than the navigation bar */
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    height: 100vh;
+    overflow: hidden; /* Ensure content outside the shape is hidden */
+}
+
+/* Add margin to the content to create space between the navigation bar and the content */
+.content {
+    margin-top: calc(var(--navbar-height) + 100px); /* Adjust the margin as needed */
+}
+
+.edge--bottom:after {
+  background: inherit;
+  content: "";
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--bottom:after {
+  bottom: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
+}
+.edge--bottom--reverse {
+  position: relative;
+  z-index: 1;
+}
+.edge--bottom--reverse:after {
+  background: inherit;
+  content: "";
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.edge--bottom--reverse:after {
+  bottom: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 0 100%;
+}
+
+.edge--bottom img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+   width: 100%;
+ /*  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);*/
+  margin-top: 60px;
+  }
+
+.block {
+  color: #fff;
+  margin: 0 0 100px; /* creates space between sections of the website */
+  padding: 20% 20px;
+  text-align: center;
+}
+/*-=-=-=-=-=-=-=-=- Top Bottom Edge Background -=-=-=-=-=-=-=-=-*/
+
+
+@media (max-width: 599px) {
+    .edge--bottom{
+        width:100%;
+  height: 60%; /* Set the height of the image to 100% of the container */
+
+    }
+    .edge--bottom img {
+ width: 100%; /* Set the width of the image to 100% of the container */
+  height: 100%; /* Set the height of the image to 100% of the container */
+  object-fit: cover; /* This property centers the image and fills the container, cropping any excess */
+
+    }
+
+}
+
+
+
+
+
+.carousel {
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.carousel-video {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #BFB098;; /* Black background color */
+
+}
+
+.video-wrapper {
+  width: 75%; /* Adjust the video width as needed */
+  max-width: 100%; /* Ensure the video doesn't exceed the container width */
+  height: auto; /* Maintain the video's aspect ratio */
+  padding-bottom: 56.25%; /* 16:9 aspect ratio for YouTube videos */
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white; 
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Add a hover effect for the previous and next buttons */
+.prev:hover, .next:hover {
+  background-color: #485253;; /* Change to brown on hover */
+  color: white; /* Change text color to white on hover */
+}
+
+
+
+
+
+
+.coming-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 80vh; /* Increase the height to 80% of the viewport height */
+    margin: 0 auto; /* Center the container horizontally */
+
+   /* opacity: 0.2;  Adjust this value to control the transparency (0.4 means 40% opacity) */
+}
+/* Profile card */
+.coming-content {
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 5%; /* Add margin to separate profiles */
+    margin-top: -2% ;
+     transition: 1000ms all;
+    transform-origin: center left;
+    opacity: 0.2; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
+}
+
+/* Profile picture */
+.coming-image {
+    width: 80%; /* Adjust the picture size */
+    height: auto; /* Adjust the picture size */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 40px; /* Spacing below the picture */
+    justify-content: center; /* Center horizontally */
+}
+/* Job title */
+.coming-title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+}
+
+
+.Button-soon {
+    background-color: #485253;
+    color: #FFFFFF; /* Correct the color value */
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    z-index: 1;
+    position: relative; /* Add relative positioning */
+   justify-content: center; /* Center horizontally */
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}
+
+@media (max-width: 599px) {
+  .coming-content {
+    margin-top: 100%; /* Spacing below the picture */
+   margin-bottom: 70%; /* Spacing below the picture */
+    transform: translateY(100%);
+  }
+
+
+  .Button-soon {
+
+    padding: 10px 20px;
+
+    }
+
+}
+
+
+
+
+
+
+/* -=-=-=-=-=-=-=-=- ComingSoon Image -=-=-=-=-=-=-=-=- */
+
+
+
+
+
+
+
+
+/*
+@media (max-width: 600px) {
+  /* Adjust the styles for mobile screens here 
+  .image-container {
+    /* Mobile-specific styles for .image-container 
+    text-align: left; /* Adjust text alignment for mobile 
+    padding: 15px; /* Adjust padding for mobile 
+
+  }
+
+    .image-container img {
+    width: 150% !important; /* Set the width to a larger percentage for mobile 
+  }
+
+  .layered-background {
+    /* Mobile-specific styles for .layered-background 
+    flex-direction: column; /* Stack elements vertically on mobile 
+    justify-content: center; /* Center content vertically on mobile 
+    height: auto; /* Remove fixed height on mobile 
+    max-height: 50vh;
+
+  }
+  .image-container h3 {
+    font-size: 16px !important; /* Adjust font size for mobile screens 
+
+    top: -60px !important; /* Adjust the vertical position from the top 
+
+  }
+
+ .Button {
+    font-size: 12px !important; /* Set a smaller font size for mobile 
+    padding: 5px 10px !important; /* Adjust the padding for mobile 
+    bottom: 120px !important; /* Adjust the vertical position for mobile 
+    left: 56% !important; /* Adjust the horizontal position for mobile 
+  }
+
+}
+
+
+*/
+
+
+
+
+
+
+
+
+/*
+
+.image-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    max-width: 100%; 
+  max-height: 80vh; 
+  width: auto;
+  height: auto;
+}
+
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 20px auto 0;
+
+  position: relative; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.image-container img {
+    width: 40%; 
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  margin-top:-20px;
+    pointer-events: none; 
+}
+
+.image-container:hover img {
+  animation: spinGrow 1s linear forwards;
+}
+
+@keyframes spinGrow {
+    0% {
+        transform: scale(0.2) rotate(0deg); 
+    }
+    50% {
+        transform: scale(1.2) rotate(360deg); 
+    }
+    100% {
+        transform: scale(1) rotate(360deg); 
+    }
+}
+
+.Button {
+  background-color: #485253;
+  color: #FFFFFF; 
+  border: none;
+  text-align: center;
+  padding: 10px 20px;
+  position: absolute; 
+  bottom: -100px; 
+  left: 54%; 
+  transform: translateX(-70%); 
+  font-family: 'Mochiy Pop P One', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    z-index: 7;
+}
+
+.Button:hover {
+  background-color: #FFFFFF; 
+  color: #485253; 
+}
+
+.rounded-corners {
+  border-radius: 25px;
+}
+
+
+.image-container h3 {
+  font-size: 42%; 
+  color: #333; 
+  margin: 0; 
+  font-weight: bold; /
+  
+
+  position: absolute; /
+  top: -70px; 
+  left: 53%; 
+  transform: translateX(-50%); 
+}
+
+
+
+
+@media (max-width: 599px) {
+    .layered-background{
+        max-height: 60vh;
+        transform: translateY(100%);
+    }
+  .image-container {
+    text-align: center; 
+  }
+
+  .image-container img {
+    width: 95%; 
+  }
+
+
+.image-container h3 {
+  font-size: 125%; 
+
+   
+}
+
+.Button {
+transform: translate(-56%,-200%);
+ 
+    max-width: 50%;
+
+    font-size: 50%;
+}
+
+
+
+
+
+
+
+
+
+}
+
+@media (min-width: 1440px) {
+
+      .image-container {
+    transform: translate(-52%, -55%); 
+
+  }
+
+
+  .image-container h3 {
+    font-size: 250%;
+    top: -90px; 
+    left: 53%; 
+    transform: translateX(-50%); 
+  }
+
+  .Button {
+    transform: translate(-75%, -150%); 
+  }
+    .layered-background {
+    height: 90vh;
+  }
+  }
+
+*/
+
+
+
+
+
+/*-=-=-=-=-=-=-=-=- News Rectangle Background -=-=-=-=-=-=-=-=-*/
+.layered-background {
+   display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 80vh; /* Increase the height to 80% of the viewport height */
+    margin: 0 auto; /* Center the container horizontally */
+      margin-top: -35%;
+    
+
+}
+
+.diagonal-rectangle,
+.reversed-diagonal-rectangle {
+  position: absolute;
+  width: 100%; /* Stretch to full width */
+  height: 100%; /* Stretch to full height */
+
+}
+
+.gray {
+  background-color: #485253; /* Blue color */
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);                 
+  z-index: -1; /* Place behind the reversed-diagonal-rectangle */
+}
+
+.brown {
+  background-color: #BFB098; /* Red color */
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+}
+
+/* Profile card */
+.image-container {
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 5%; /* Add margin to separate profiles */
+    margin-top: 70%;
+    transition: 1000ms all;
+    transform-origin: center left;
+    position: relative; /* Add relative positioning */
+    transform: translateY(-90%);
+    text-align: center;
+
+}
+
+
+
+
+/* Profile picture */
+.news-image {
+    width: 50%; /* Adjust the picture size */
+    height: auto; /* Adjust the picture size */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 40px; /* Spacing below the picture */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+/* Job title */
+.news-title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+    text-align: center;
+    pointer-events: none; 
+}
+
+.image-container:hover img {
+  animation: spinGrow 1s linear forwards;
+}
+
+@keyframes spinGrow {
+    0% {
+        transform: scale(0.2) rotate(0deg); 
+    }
+    50% {
+        transform: scale(1.2) rotate(360deg); 
+    }
+    100% {
+        transform: scale(1) rotate(360deg); 
+    }
+}
+
+
+.Button {
+    background-color: #485253;
+    color: #FFFFFF; /* Correct the color value */
+    border: none;
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    z-index: 1;
+    position: relative; /* Add relative positioning */
+   justify-content: center; /* Center horizontally */
+}
+
+.Button:hover {
+    cursor: pointer;
+  background-color: #FFFFFF; 
+  color: #485253; 
+}
+
+.rounded-corners {
+    border-radius: 25px;
+}
+
+
+
+
+@media (max-width: 599px) {
+    .layered-background{
+        max-height: 20vh;
+        transform: translateY(40%);
+    }
+  .image-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text within each card */
+     
+      transform: translateY(-40%);; 
+  }
+  .news-image{
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+    align-items: center; 
+    max-width: 100%; 
+    margin: 20px auto 0;
+    padding: 10px; 
+    transform: translate(-5%,250%);
+}
+
+.team {
+    
+    width: calc(50% - 20px); 
+    min-width: 150px; 
+    height: auto; 
+    border-radius: 16px;
+    transition: 1000ms all;
+    transform-origin: center left;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+
+    margin-bottom: 20px; 
+    margin-left:235px;
+
+
+}
+
+.team img {
+  
+    max-width: 100%; 
+    height: auto; 
+    max-height: 100%; 
+    object-fit: cover;
+    border-radius: 8px;
+
+}
+
+.team h3 {
+    font-size: 300%; 
+    transform: translate(24%,-100%);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+.team img:hover {
+   
+    animation: shake 0.5s;
+
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+@media (max-width: 599px) {
+    .team-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; 
+        justify-content: center; 
+        align-items: center; 
+        max-width: 100%; 
+        margin: 20px auto; 
+        padding: 10px;
+        margin-left: 10%;
+        transform: translate(-60%, 300%);
+    }
+
+
+    .team
+        
+    }
+
+    .team h3 {
+        text-align: center;
+        font-size: 18px; 
+        transform: translateX(45%);
+    }
+  
+}
+
+@media screen and (min-width: 2500px) {
+
+    .team h3{
+        transform: translate(31%, -40%);
+    }
+
+}
+
+
+
+*/
+
+
+
+/* Profile card */
+.team {
+    text-align: center; /* Center content within each card */
+    padding: 20px; /* Add some padding to separate cards */
+    margin: 5%; /* Add margin to separate profiles */
+    margin-top: -30% ;
+     transition: 1000ms all;
+    transform-origin: center left;
+
+
+}
+
+/* Profile picture */
+.team-image {
+    width: 50%; /* Adjust the picture size */
+    height: auto; /* Adjust the picture size */
+    object-fit: cover; /* Maintain aspect ratio */
+    
+    justify-content: center; /* Center horizontally */
+}
+/* Job title */
+.team-title {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Spacing below the name */
+    justify-content: center; /* Center horizontally */
+}
+.team-image:hover {
+   
+    animation: shake 0.5s;
+
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@media (max-width: 599px) {
+    .team {
+                flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text within each card */
+  transform: translateY(130%);
+margin-bottom: 75%;
+
+    }
+.team-image {
+    width: 100%; /* Adjust the picture size */
+}
+}
+
+
+
+
+
+
+:root {
+    --footer-background: #121a29;
+    --text-color: #FAFBFC;
+    --text-gray: #FEFEFE;
+    --text-primary: #FAFBFC;
+    --button-color: #404652;
+    --button-border: #6B707C;
+}
+
+
+
+/*? footer reset */
+*, *::after, *::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+@media (max-width: 599px) {
+
+.footer-wrapper{
+    transform: translate(-10%,5%);
+}
+}
+
+
+
+.layered-background2 {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust total height as needed */
+  overflow: hidden; /* Hide overflowing content */
+
+}
+
+.diagonal-rectangle2,
+.reversed-diagonal-rectangle2 {
+  position: absolute;
+  width: 100%; /* Stretch to full width */
+  height: 100%; /* Stretch to full height */
+}
+
+.brown2 {
+  background-color: #BFB098; /* Light Brown color */
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);                 
+  z-index: -2; /* Place behind the reversed-diagonal-rectangle */
+}
+
+.light-black {
+  background-color: #141414; /* Light  Black color */
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+  z-index: -1
+}
+
+@media (min-width: 2500px) {
+
+.layered-background2{
+    margin-top: -15%;
+}
+}
+
+
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    background-color: transparent;
+    min-width: 300px;
+    width: 100vw;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+
+}
+
+
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 16px;
+   height:20%;
+    width: 70%; /* Add this line to stretch horizontally */
+    margin-top: 90px; /* Adjust the margin-top value as needed */
+
+}
+
+
+/*? top section */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    padding: 16px 0px;
+    justify-content: space-between;
+}
+
+.footer-line {
+    display: block;
+    width: 100%;
+    height: 8px;
+}
+
+/*? footer subscribe */
+.footer-subscribe {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-subscribe > input {
+    border: 1px solid var(--button-border);
+    color: var(--text-color);
+    outline: none;
+    min-height: 36px;
+    background-color: var(--footer-background);
+    font-size: 1.2rem;
+    flex: 1 0 120px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.footer-subscribe > input::placeholder {
+    color: var(--text-color);
+}
+
+.footer-subscribe > button {
+    cursor: pointer;
+    background-color: var(--button-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.25rem;
+    min-width: 120px;
+    min-height: 36px;
+    flex: 1 0 80px;
+    white-space: nowrap;
+    padding: 8px 12px;
+    border: 0px;
+    outline: none;
+    border: 1px solid var(--button-border);
+}
+
+/*? footer columns */
+.footer-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    flex: 2 0 140px;
+    width: 100%;
+    gap: 16px;
+    padding: 24px 8px 16px 8px;
+    margin: 0 auto;
+}
+
+.footer-columns ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-columns ul a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-columns ul a:hover{
+    text-decoration: underline;
+}
+
+.footer-columns ul li {
+    margin-bottom: 16px;
+}
+
+.footer-columns h3 {
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.125rem;
+}
+
+.footer-centering {
+    margin: 0 auto;
+}
+
+.footer-columns > section {
+    min-width: 150px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: 16px;
+    color: var(--text-color);
+    margin-bottom: 60px;
+    transform: translateX(70%);
+}
+/*
+.footer-logo svg {
+    stroke: var(--text-color);
+    stroke-width: 8px;
+    width: 50px;
+    height: 50px;
+}*/
+
+.footer-logo {
+  position: relative;
+  max-width: 35%; /* Adjust the maximum width of the image */
+  max-height: 35%; /* Adjust the maximum height of the image */
+
+}
+
+.footer-logo img{
+  width: 100%; /* Make the image take up 100% of the container's width */
+  height: auto; /* Allow the image to maintain its aspect ratio */
+  opacity: 0.4; /* Adjust this value to control the transparency (0.4 means 40% opacity) */
+
+}
+
+
+/*? Footer bottom */
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 48px; 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    padding: 16px 0px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: var(--text-gray);
+}
+
+.footer-bottom > small {
+    font-size: 16px;
+    margin: 0 4px;
+}
+
+.footer-headline > h2 {
+    margin: 0px;
+    color: var(--text-primary);
+}
+
+.footer-headline > p {
+    color: var(--text-gray);
+    margin: 4px 0px 20px 0px;
+}
+
+.footer-line {
+    display: block;
+    min-width: 40px;
+    height: 2px;
+    background-color: var(--text-gray);
+}
+
+/*? socials */
+
+.social-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.social-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+.social-links ul {
+    display: flex;
+    gap: 12px;
+    list-style-type: none;
+}
+
+/*? mobile */
+
+@media (max-width: 800px) {
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px 8px 32px 8px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: space-between;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 599px) {
+.layered-background2{
+    transform: translateY(5%);
+max-height: 100%;
+
+ max-width: 100%;
+
+
+
+}
+.footer-logo img{
+display: none;
+
+}
+.footer-subscribe input{
+    width:40%;
+}
+
+.footer-wrapper{
+    transform: translate(0%,10%);
+
+}
+.footer-subscribe{
+    font-size:50%;
+
+
+}
+.footer-columns{
+    font-size:60%;
+    width:200%;
+
+}
+.footer-bottom{
+margin-bottom: 50%;
+
+}
+
+    }
+
+
+@media screen and (min-width: 2500px) {
+.layered-background2{
+    transform: translate(0%,50%);
+    }
+.footer-wrapper{
+    transform: translate(0%,10%);
+
+}
+
+}
+
+@media screen and (max-width: 360px) {
+    .layered-background2{
+    transform: translate(0%,30%);
+    }
+    }
+
+
+
+
+
+
+/* Add this CSS to style the bottom bar */
+.bottom-bar {
+  position: relative; /* Use fixed positioning */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #485253; /* Choose your desired background color */
+  color: #fff; /* Choose your desired text color */
+  text-align: center;
+  padding: 10px 0; /* Adjust padding as needed */
+  z-index: 1001; /* Adjust the z-index to ensure it's on top of other content */
+
+}
+
+
+
